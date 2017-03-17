@@ -1,0 +1,10 @@
+framework module SgSDK {
+  umbrella header "SgSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module SgSDK.Swift {
+    header "SgSDK-Swift.h"
+}
