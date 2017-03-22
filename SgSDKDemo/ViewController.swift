@@ -32,7 +32,11 @@ class ViewController: UIViewController {
         SgSDK.Instance.Login()
     }
     
-    @IBAction func OnOpenID(_ sender: UIButton) {
+    @IBAction func Logout(_ sender: UIButton) {
+        SgSDK.Instance.Logout()
+    }
+    
+    @IBAction func OnGetOpenID(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetOpenID() {
             setMessage("\(msg)")
         } else {
@@ -40,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func OnSessionID(_ sender: UIButton) {
+    @IBAction func OnGetSessionID(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetSessionID() {
             setMessage(msg)
         } else {
@@ -48,7 +52,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnToken(_ sender: UIButton) {
+    @IBAction func OnGetToken(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetToken() {
             setMessage(msg)
         } else {
@@ -56,23 +60,67 @@ class ViewController: UIViewController {
         }
     }
     
-    func MsgListen(code: Int) {
-        
-        switch(code) {
-        case 101:
-            self.setMessage("init succeed!")
-        case 102:
-            self.setMessage("init failed")
-        case 200:
-            print("show login page.")
-        case 201:
-            self.setMessage("login succeed!")
-        case 202:
-            self.setMessage("login failed")
-        default:
-            self.setMessage("Unknow error")
+    @IBAction func OnSignup(_ sender: UIButton) {
+        SgSDK.Instance.Signup()
+    }
+    
+    @IBAction func OnForgotPassword(_ sender: UIButton) {
+        SgSDK.Instance.ForgotPassword()
+    }
+    
+    @IBAction func OnChangePassword(_ sender: UIButton) {
+        SgSDK.Instance.ChangePassword()
+    }
+    
+    @IBAction func OnParentalLock(_ sender: UIButton) {
+        SgSDK.Instance.ParentalLock()
+    }
+    
+    @IBAction func OnMyKid(_ sender: UIButton) {
+        SgSDK.Instance.MyKid()
+    }
+    
+    @IBAction func OnMyAccount(_ sender: UIButton) {
+        SgSDK.Instance.MyAccount()
+    }
+    
+    @IBAction func OnOpenID(_ sender: UIButton) {
+        SgSDK.Instance.OpenID() {
+            (any) -> Void in
+            if let openid = any as? Int {
+                print("OpenID:\(openid)")
+            }
         }
-        
+    }
+    
+    @IBAction func OnVerifySession(_ sender: UIButton) {
+        SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "") {
+            (any) -> Void in
+            if let verify = any as? Verify {
+                print("VerifySession, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+            }
+        }
+    }
+    
+    @IBAction func OnVerifyToken(_ sender: UIButton) {
+        SgSDK.Instance.VerifyToken(token: SgSDK.Instance.GetToken()!) {
+            (any) -> Void in
+            if let verify = any as? Verify {
+                print("VerifyToken, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+            }
+        }
+    }
+    
+    @IBAction func OnGameStart(_ sender: UIButton) {
+        SgSDK.Instance.GameStart()
+    }
+    
+    @IBAction func OnGameStop(_ sender: UIButton) {
+        SgSDK.Instance.GameStop()
+    }
+    
+    func MsgListen(code: Int, msg: String) {
+        self.setMessage("Error code: \(code), msg: \(msg)")
     }
     
     private func setMessage(_ msg: String) {

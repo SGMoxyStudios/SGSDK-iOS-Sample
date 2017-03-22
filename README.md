@@ -6,27 +6,14 @@
   - 加入完成後可在專案裡import SgSDK
 
 ## function
-  - func SetListener(listener callBack: @escaping (Int) -> Void)
+  - func SetListener(listener callBack: @escaping (Int, String) -> Void)
     - 使用SgSDK第一步就是，設置callBack function
     - 回傳的參數代表成功或失敗
     ```
     SgSDK.Instance.SetListener(listener: MsgListen)
-    ........
-    func MsgListen(code: Int) {
-        switch(code) {
-        case 101:
-            self.setMessage("init succeed!")
-        case 102:
-            self.setMessage("init failed")
-        case 200:
-            print("show login page.")
-        case 201:
-            self.setMessage("login succeed!")
-        case 202:
-            self.setMessage("login failed")
-        default:
-            self.setMessage("Unknow error")
-        }
+    ...
+    func MsgListen(code: Int, msg: String) {
+        self.setMessage("Error code: \(code), msg: \(msg)")
     }
     ```
   - func Init(\_ GameKey: String, \_ AppSecret: String)
@@ -36,15 +23,116 @@
     ```
 
   - func Login()
-    - 需要使用Init之後才能使用Login()
+    - 前置：Init()
     - 使用後會打開登入畫面
     - 左上角會有一個"Back"按鈕，可以回主畫面
     ```
     SgSDK.Instance.Login()
     ```
+  - func Signup()
+    - 前置：Init()
+    - 使用後會打開註冊畫面
+    ```
+    SgSDK.Instance.Signup()
+    ```
+
+  - func ForgotPassword()
+    - 前置：Init()
+    - 使用後會打開忘記密碼的畫面
+    ```
+    SgSDK.Instance.ForgotPassword()
+    ```
+
+  - func ChangePassword()
+    - 前置：Init()
+    - 使用後會打開變更密碼的畫面
+    ```
+    SgSDK.Instance.ChangePassword()
+    ```
+
+  - func ParentalLock()
+    - 前置：Init()
+    - 使用後會打開家長操作的畫面
+    - 不會有回傳
+    ```
+    SgSDK.Instance.ParentalLock()
+    ```
+  - func MyKid()
+    - 前置：Init()
+    - 使用後會打開新增孩童資料的畫面
+    ```
+    SgSDK.Instance.MyKid()
+    ```
+  - func MyAccount()
+    - 前置：Init()
+    - 使用後會打開孩童資料的畫面
+    - 不會有回傳
+    ```
+    SgSDK.Instance.MyAccount()
+    ```
+  - func OpenID(listener callBack: @escaping (Any) -> Void)
+    - 前置：Init()
+    - 回傳：OpenID
+    ```
+    SgSDK.Instance.OpenID() {
+            (any) -> Void in
+            if let openid = any as? Int {
+                print("OpenID:\(openid)")
+            }
+        }
+    ```
+
+  - func VerifySession(appId: String, session: String, uid: String, signature: String, listener callBack: @escaping (Any) -> Void)
+    - 前置：Init()
+    - Session ID登入驗證
+    - 回傳：Account, OpenID, Password, EMail
+    ```
+    SgSDK.Instance.VerifySession(appId: "YourAppId", session: "SessionID", uid: "UID", signature: "Signature") {
+            (any) -> Void in
+            if let verify = any as? Verify {
+                print("VerifySession, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+            }
+        }
+    ```
+
+  - public func VerifyToken(token: String, listener callBack: @escaping (Any) -> Void)
+    - 前置：Init()
+    - Token 登入驗證
+    - 回傳：Account, OpenID, Password, EMail
+    ```
+    SgSDK.Instance.VerifyToken(token: "Token") {
+            (any) -> Void in
+            if let verify = any as? Verify {
+                print("VerifyToken, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+            }
+        }
+    ```
+
+  - func Logout()
+    - 前置：Init()
+    - 登出
+    - 不會有回傳
+    ```
+    SgSDK.Instance.Logout()
+    ```
+
+  - func GameStart()
+    - 前置：Init()
+    - 開始統計遊戲時間
+    - 不會有回傳
+    ```
+    SgSDK.Instance.GameStart()
+    ```
+
+  - func GameStop()
+    - 前置：Init()
+    - 結束統計遊戲時間
+    ```
+    SgSDK.Instance.GameStop()
+    ```
 
   - func GetOpenID() -> Int?
-    - 需要成功登入後才能使用
+    - 前置：Login()
     - 會直接回傳結果
       - 成功的話會得到一個Int?
       - 失敗的話會得到一個nil
@@ -57,7 +145,7 @@
     ```
 
   - func GetSessionID() -> String?
-    - 需要成功登入後才能使用
+    - 前置：Login()
     - 會直接回傳結果
       - 成功的話會得到一個String?
       - 失敗的話會得到一個nil
@@ -70,7 +158,7 @@
     ```
 
   - func GetToken() -> String?
-    - 需要成功登入後才能使用
+    - 前置：Login()
     - 會直接回傳結果
       - 成功的話會得到一個String?
       - 失敗的話會得到一個nil

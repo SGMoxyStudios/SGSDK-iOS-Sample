@@ -116,7 +116,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
-@import Foundation;
 @import WebKit;
 @import UIKit;
 #endif
@@ -129,13 +128,26 @@ SWIFT_CLASS("_TtC5SgSDK5SgSDK")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SgSDK * _Nonnull Instance;)
 + (SgSDK * _Nonnull)Instance;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
-- (void)SetListenerWithListener:(void (^ _Nonnull)(NSInteger))callBack;
+- (void)SetListenerWithListener:(void (^ _Nonnull)(NSInteger, NSString * _Nonnull))callBack;
 - (void)CloseWebView;
 - (void)Init:(NSString * _Nonnull)GameKey :(NSString * _Nonnull)AppSecret;
 - (void)Login;
+- (void)Signup;
+- (void)ForgotPassword;
+- (void)ChangePassword;
+- (void)ParentalLock;
+- (void)MyKid;
+- (void)MyAccount;
+- (void)OpenIDWithListener:(void (^ _Nonnull)(id _Nonnull))callBack;
+- (void)VerifySessionWithAppId:(NSString * _Nonnull)appId session:(NSString * _Nonnull)session uid:(NSString * _Nonnull)uid signature:(NSString * _Nonnull)signature listener:(void (^ _Nonnull)(id _Nonnull))callBack;
+- (void)VerifyTokenWithToken:(NSString * _Nonnull)token listener:(void (^ _Nonnull)(id _Nonnull))callBack;
+- (void)Logout;
+- (void)GameStart;
+- (void)GameStop;
 - (NSString * _Nullable)GetSessionID;
 - (NSString * _Nullable)GetToken;
-- (void)HttpRequestWithUrlRequest:(NSURLRequest * _Nonnull)urlRequest;
+- (BOOL)IsLogined;
+- (void)HideFloatingButton;
 @end
 
 @class WKWebView;

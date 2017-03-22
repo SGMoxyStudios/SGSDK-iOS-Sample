@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3652FBA1E7BC02200B48E37 /* SgSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3652FB91E7BC02200B48E37 /* SgSDK.framework */; };
-		D3652FBB1E7BC02200B48E37 /* SgSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3652FB91E7BC02200B48E37 /* SgSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D36858711E821F210064A6C5 /* SgSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36858701E821F210064A6C5 /* SgSDK.framework */; };
+		D36858721E821F210064A6C5 /* SgSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D36858701E821F210064A6C5 /* SgSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D36A161C1E790F9F0057E796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A161B1E790F9F0057E796 /* AppDelegate.swift */; };
 		D36A161E1E790FA00057E796 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A161D1E790FA00057E796 /* ViewController.swift */; };
 		D36A16211E790FA00057E796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36A161F1E790FA00057E796 /* Main.storyboard */; };
@@ -17,13 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D3652FBC1E7BC02200B48E37 /* Embed Frameworks */ = {
+		D36858731E821F210064A6C5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3652FBB1E7BC02200B48E37 /* SgSDK.framework in Embed Frameworks */,
+				D36858721E821F210064A6C5 /* SgSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D3652FB91E7BC02200B48E37 /* SgSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SgSDK.framework; path = SgSDKDemo/SgSDK.framework; sourceTree = "<group>"; };
+		D36858701E821F210064A6C5 /* SgSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SgSDK.framework; path = SgSDKDemo/SgSDK.framework; sourceTree = "<group>"; };
 		D36A16181E790F9F0057E796 /* SgSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SgSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36A161B1E790F9F0057E796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36A161D1E790FA00057E796 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3652FBA1E7BC02200B48E37 /* SgSDK.framework in Frameworks */,
+				D36858711E821F210064A6C5 /* SgSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		D36A160F1E790F9F0057E796 = {
 			isa = PBXGroup;
 			children = (
-				D3652FB91E7BC02200B48E37 /* SgSDK.framework */,
+				D36858701E821F210064A6C5 /* SgSDK.framework */,
 				D36A161A1E790F9F0057E796 /* SgSDKDemo */,
 				D36A16191E790F9F0057E796 /* Products */,
 			);
@@ -93,7 +93,7 @@
 				D36A16141E790F9F0057E796 /* Sources */,
 				D36A16151E790F9F0057E796 /* Frameworks */,
 				D36A16161E790F9F0057E796 /* Resources */,
-				D3652FBC1E7BC02200B48E37 /* Embed Frameworks */,
+				D36858731E821F210064A6C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
