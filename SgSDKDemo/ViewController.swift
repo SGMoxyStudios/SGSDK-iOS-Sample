@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     
     @IBAction func Logout(_ sender: UIButton) {
         SgSDK.Instance.Logout()
+        self.setMessage("Logout.")
     }
     
     @IBAction func OnGetOpenID(_ sender: UIButton) {
@@ -88,7 +89,7 @@ class ViewController: UIViewController {
         SgSDK.Instance.OpenID() {
             (any) -> Void in
             if let openid = any as? Int {
-                print("OpenID:\(openid)")
+                self.setMessage("OpenID:\(openid)")
             }
         }
     }
@@ -97,26 +98,43 @@ class ViewController: UIViewController {
         SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "") {
             (any) -> Void in
             if let verify = any as? Verify {
-                print("VerifySession, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+                if verify.Code == SgSDK.eSDKErrorCode.VerifySession_Ok.rawValue {
+                    self.setMessage("VerifySession, code: \(verify.Code), msg: \(verify.Msg), Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
+                } else {
+                    self.setMessage("Error code: \(verify.Code), msg: \(verify.Msg)")
+                }
             }
         }
     }
     
     @IBAction func OnVerifyToken(_ sender: UIButton) {
-        SgSDK.Instance.VerifyToken(token: SgSDK.Instance.GetToken()!) {
+        guard let token = SgSDK.Instance.GetToken() else {
+            self.setMessage("Please login.")
+            return
+        }
+        
+        SgSDK.Instance.VerifyToken(token: token) {
             (any) -> Void in
             if let verify = any as? Verify {
-                print("VerifyToken, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
+                if verify.Code == SgSDK.eSDKErrorCode.VerifyToken_Ok.rawValue {
+                    self.setMessage("VerifyToken, code: \(verify.Code), msg: \(verify.Msg), Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
+                } else {
+                    self.setMessage("Error code: \(verify.Code), msg: \(verify.Msg)")
+                }
             }
         }
     }
     
     @IBAction func OnGameStart(_ sender: UIButton) {
         SgSDK.Instance.GameStart()
+        self.setMessage("Game start.")
     }
     
     @IBAction func OnGameStop(_ sender: UIButton) {
         SgSDK.Instance.GameStop()
+    }
+    @IBAction func OnIsLogined(_ sender: UIButton) {
+        self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
     }
     
     func MsgListen(code: Int, msg: String) {

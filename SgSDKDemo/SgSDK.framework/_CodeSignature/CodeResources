@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		fXbeQQkb0Fzncviv5OAxtbCcmGY=
+		gOd8HybUl2jAmlrUGgqMo87Lm90=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,11 +68,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fXbeQQkb0Fzncviv5OAxtbCcmGY=
+			gOd8HybUl2jAmlrUGgqMo87Lm90=
 			</data>
 			<key>hash2</key>
 			<data>
-			A3dqBlZWjlOQPVpP1XfeKVmw9JTpPGaZS3yefE6AlUI=
+			rzfIUpllIHKlm0TpKsK9Q+1KnPjvA8oq69VpJfwQZV8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

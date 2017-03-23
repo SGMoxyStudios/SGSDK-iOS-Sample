@@ -7,8 +7,10 @@
 
 ## function
   - func SetListener(listener callBack: @escaping (Int, String) -> Void)
-    - 使用SgSDK第一步就是，設置callBack function
-    - 回傳的參數代表成功或失敗
+    - 使用SgSDK第一步就是，設置listener，沒有設置的話後面的function無法使用
+    - listener 帶兩個參數
+      1. code: Int 回傳Error Code
+      2. msg: String 回傳該Error Code代表的訊息
     ```
     SgSDK.Instance.SetListener(listener: MsgListen)
     ...
@@ -17,6 +19,7 @@
     }
     ```
   - func Init(\_ GameKey: String, \_ AppSecret: String)
+    - 使用SgSDK第二步就是Init()，沒有使用的話後面的function也無法使用
     - 初始化SgSDK, 將GameKey和AppSecret依照順序填入
     ```
     SgSDK.Instance.Init("YourGameKey", "YourAppSecret")
@@ -168,4 +171,9 @@
         } else {
             setMessage("Please login.")
         }
+    ```
+  - func IsLogined() -> Bool
+    - 判斷是否為登入狀態
+    ```
+    self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
     ```
