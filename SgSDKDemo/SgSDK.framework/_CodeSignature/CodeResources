@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SgSDK-Swift.h</key>
 		<data>
-		hOOp38bktqaeXi5xu7bdCKyzJWM=
+		Ik/fj5TmB7pJalYJFLvzLcA1eoo=
 		</data>
 		<key>Headers/SgSDK.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		gOd8HybUl2jAmlrUGgqMo87Lm90=
+		CKRkpMti5LlM7cONFDQxfdb9WXc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hOOp38bktqaeXi5xu7bdCKyzJWM=
+			Ik/fj5TmB7pJalYJFLvzLcA1eoo=
 			</data>
 			<key>hash2</key>
 			<data>
-			rgSF5s8YfRH51yH69L5bZ9duWkNuL6XNe1R3YmEyHWg=
+			aUx41SMTKcIrVVBJ0VqczFje8QeAEWiCX17k17nMNIo=
 			</data>
 		</dict>
 		<key>Headers/SgSDK.h</key>
@@ -68,11 +68,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gOd8HybUl2jAmlrUGgqMo87Lm90=
+			CKRkpMti5LlM7cONFDQxfdb9WXc=
 			</data>
 			<key>hash2</key>
 			<data>
-			rzfIUpllIHKlm0TpKsK9Q+1KnPjvA8oq69VpJfwQZV8=
+			wGCmYreMuvdG5s7glgJ5UIGdabOdgsCSLJfqpk/hkU8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

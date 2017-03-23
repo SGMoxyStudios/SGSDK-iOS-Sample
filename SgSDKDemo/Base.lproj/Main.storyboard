@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="his-Yn-71x">
-                                <rect key="frame" x="46" y="50" width="283" height="270"/>
+                                <rect key="frame" x="46" y="50" width="283" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W0T-4R-ztk">
                                         <rect key="frame" x="0.0" y="0.0" width="141.5" height="270"/>
@@ -94,7 +94,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZPX-nD-y5O">
-                                        <rect key="frame" x="141.5" y="0.0" width="141.5" height="270"/>
+                                        <rect key="frame" x="141.5" y="0.0" width="141.5" height="300"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-oV-Ci9">
                                                 <rect key="frame" x="0.0" y="0.0" width="141.5" height="30"/>
@@ -159,12 +159,19 @@
                                                     <action selector="OnIsLogined:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hzy-wC-auE"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4O-9U-ZKO">
+                                                <rect key="frame" x="0.0" y="270" width="141.5" height="30"/>
+                                                <state key="normal" title="Channel ID"/>
+                                                <connections>
+                                                    <action selector="OnChannelID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stI-bQ-4El"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ha-sU-ghX">
-                                <rect key="frame" x="26" y="320" width="323" height="20.5"/>
+                                <rect key="frame" x="26" y="350" width="323" height="20.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

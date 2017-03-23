@@ -147,7 +147,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SgSDK * _Non
 - (NSString * _Nullable)GetSessionID;
 - (NSString * _Nullable)GetToken;
 - (BOOL)IsLogined;
+- (NSString * _Nonnull)GetChannelID;
 - (void)HideFloatingButton;
+- (void)Destroy;
 @end
 
 @class WKWebView;

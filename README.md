@@ -177,3 +177,8 @@
     ```
     self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
     ```
+  - func GetChannelID() -> String
+    - 取得平台名稱
+    ```
+    self.setMessage("Channel ID: \(SgSDK.Instance.GetChannelID())")
+    ```

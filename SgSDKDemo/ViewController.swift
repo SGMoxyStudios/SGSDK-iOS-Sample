@@ -133,8 +133,13 @@ class ViewController: UIViewController {
     @IBAction func OnGameStop(_ sender: UIButton) {
         SgSDK.Instance.GameStop()
     }
+    
     @IBAction func OnIsLogined(_ sender: UIButton) {
         self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
+    }
+    
+    @IBAction func OnChannelID(_ sender: UIButton) {
+        self.setMessage("Channel ID: \(SgSDK.Instance.GetChannelID())")
     }
     
     func MsgListen(code: Int, msg: String) {
