@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  SgSDKDemo
+//  SGSDK_iOS_Sample
 //
-//  Created by 張又壬 on 2017/3/15.
+//  Created by 張又壬 on 2017/3/24.
 //  Copyright © 2017年 SmartGames. All rights reserved.
 //
 
@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     let GameKey: String = "d7e73390-d7fd-11e6-9074-21c247f06802"
     let AppSecret: String = "d7d7c810-d7ee-11e6-9e86-db4f79aeee86"
     @IBOutlet weak var Message: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             setMessage("Please login.")
         }
     }
-
+    
     @IBAction func OnGetSessionID(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetSessionID() {
             setMessage(msg)
@@ -152,4 +152,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

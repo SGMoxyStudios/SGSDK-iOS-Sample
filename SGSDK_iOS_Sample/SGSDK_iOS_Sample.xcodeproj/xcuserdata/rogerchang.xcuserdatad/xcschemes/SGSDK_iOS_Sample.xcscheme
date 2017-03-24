@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D36A16171E790F9F0057E796"
-               BuildableName = "SgSDKDemo.app"
-               BlueprintName = "SgSDKDemo"
-               ReferencedContainer = "container:SgSDKDemo.xcodeproj">
+               BlueprintIdentifier = "D3535EE41E84C80600BBFEE4"
+               BuildableName = "SGSDK_iOS_Sample.app"
+               BlueprintName = "SGSDK_iOS_Sample"
+               ReferencedContainer = "container:SGSDK_iOS_Sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D36A16171E790F9F0057E796"
-            BuildableName = "SgSDKDemo.app"
-            BlueprintName = "SgSDKDemo"
-            ReferencedContainer = "container:SgSDKDemo.xcodeproj">
+            BlueprintIdentifier = "D3535EE41E84C80600BBFEE4"
+            BuildableName = "SGSDK_iOS_Sample.app"
+            BlueprintName = "SGSDK_iOS_Sample"
+            ReferencedContainer = "container:SGSDK_iOS_Sample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D36A16171E790F9F0057E796"
-            BuildableName = "SgSDKDemo.app"
-            BlueprintName = "SgSDKDemo"
-            ReferencedContainer = "container:SgSDKDemo.xcodeproj">
+            BlueprintIdentifier = "D3535EE41E84C80600BBFEE4"
+            BuildableName = "SGSDK_iOS_Sample.app"
+            BlueprintName = "SGSDK_iOS_Sample"
+            ReferencedContainer = "container:SGSDK_iOS_Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D36A16171E790F9F0057E796"
-            BuildableName = "SgSDKDemo.app"
-            BlueprintName = "SgSDKDemo"
-            ReferencedContainer = "container:SgSDKDemo.xcodeproj">
+            BlueprintIdentifier = "D3535EE41E84C80600BBFEE4"
+            BuildableName = "SGSDK_iOS_Sample.app"
+            BlueprintName = "SGSDK_iOS_Sample"
+            ReferencedContainer = "container:SGSDK_iOS_Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -2,7 +2,7 @@
 //  SgSDK.h
 //  SgSDK
 //
-//  Created by 張又壬 on 2017/3/15.
+//  Created by 張又壬 on 2017/3/24.
 //  Copyright © 2017年 SmartGames. All rights reserved.
 //
 
