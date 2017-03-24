@@ -172,13 +172,39 @@
             setMessage("Please login.")
         }
     ```
+
   - func IsLogined() -> Bool
     - 判斷是否為登入狀態
     ```
     self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
     ```
+
   - func GetChannelID() -> String
     - 取得平台名稱
     ```
     self.setMessage("Channel ID: \(SgSDK.Instance.GetChannelID())")
+    ```
+
+  - func ShowFloatingButton(place position: eFloatingButtonPlace = .Left)
+    - 開啟懸浮按鈕
+    - 前置：Init()
+    - 開啟後會依照選擇的方位在視窗邊上出現
+    - 按鈕可隨意拖拉，放開按鈕後會找最接近的邊吸附
+    - 按鈕不動的時候10秒後會自動埋入半顆按鈕再視窗邊上
+    - 按下按鈕會開啟孩童資料的畫面
+    ```
+    SgSDK.Instance.ShowFloatingButton(place: .Top)
+    ```
+
+  - func HideFloatingButton()
+    - 關閉懸浮按鈕
+    - 前置：Init()
+    ```
+    SgSDK.Instance.HideFloatingButton()
+    ```
+
+  - func Destroy()
+    - 摧毀SgSDK.Instance
+    ```
+    SgSDK.Instance.Destroy()
     ```

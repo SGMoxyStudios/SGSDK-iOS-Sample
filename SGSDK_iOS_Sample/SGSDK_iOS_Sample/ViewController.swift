@@ -23,21 +23,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func OnInit(_ sender: UIButton) {
+    @IBAction func onInit(_ sender: UIButton) {
         SgSDK.Instance.SetListener(listener: MsgListen)
         SgSDK.Instance.Init(GameKey, AppSecret)
     }
     
-    @IBAction func OnLogin(_ sender: UIButton) {
+    @IBAction func onLogin(_ sender: UIButton) {
         SgSDK.Instance.Login()
     }
     
-    @IBAction func Logout(_ sender: UIButton) {
+    @IBAction func onLogout(_ sender: UIButton) {
         SgSDK.Instance.Logout()
         self.setMessage("Logout.")
     }
     
-    @IBAction func OnGetOpenID(_ sender: UIButton) {
+    @IBAction func onGetOpenID(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetOpenID() {
             setMessage("\(msg)")
         } else {
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnGetSessionID(_ sender: UIButton) {
+    @IBAction func onGetSessionID(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetSessionID() {
             setMessage(msg)
         } else {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnGetToken(_ sender: UIButton) {
+    @IBAction func onGetToken(_ sender: UIButton) {
         if let msg = SgSDK.Instance.GetToken() {
             setMessage(msg)
         } else {
@@ -61,31 +61,31 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnSignup(_ sender: UIButton) {
+    @IBAction func onSignup(_ sender: UIButton) {
         SgSDK.Instance.Signup()
     }
     
-    @IBAction func OnForgotPassword(_ sender: UIButton) {
+    @IBAction func onForgotPassword(_ sender: UIButton) {
         SgSDK.Instance.ForgotPassword()
     }
     
-    @IBAction func OnChangePassword(_ sender: UIButton) {
+    @IBAction func onChangePassword(_ sender: UIButton) {
         SgSDK.Instance.ChangePassword()
     }
     
-    @IBAction func OnParentalLock(_ sender: UIButton) {
+    @IBAction func onParentalLock(_ sender: UIButton) {
         SgSDK.Instance.ParentalLock()
     }
     
-    @IBAction func OnMyKid(_ sender: UIButton) {
+    @IBAction func onMyKid(_ sender: UIButton) {
         SgSDK.Instance.MyKid()
     }
     
-    @IBAction func OnMyAccount(_ sender: UIButton) {
+    @IBAction func onMyAccount(_ sender: UIButton) {
         SgSDK.Instance.MyAccount()
     }
     
-    @IBAction func OnOpenID(_ sender: UIButton) {
+    @IBAction func onOpenID(_ sender: UIButton) {
         SgSDK.Instance.OpenID() {
             (any) -> Void in
             if let openid = any as? Int {
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnVerifySession(_ sender: UIButton) {
+    @IBAction func onVerifySession(_ sender: UIButton) {
         SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "") {
             (any) -> Void in
             if let verify = any as? Verify {
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnVerifyToken(_ sender: UIButton) {
+    @IBAction func onVerifyToken(_ sender: UIButton) {
         guard let token = SgSDK.Instance.GetToken() else {
             self.setMessage("Please login.")
             return
@@ -125,21 +125,62 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func OnGameStart(_ sender: UIButton) {
+    @IBAction func onGameStart(_ sender: UIButton) {
         SgSDK.Instance.GameStart()
         self.setMessage("Game start.")
     }
     
-    @IBAction func OnGameStop(_ sender: UIButton) {
+    @IBAction func onGameStop(_ sender: UIButton) {
         SgSDK.Instance.GameStop()
     }
     
-    @IBAction func OnIsLogined(_ sender: UIButton) {
+    @IBAction func onIsLogined(_ sender: UIButton) {
         self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
     }
     
-    @IBAction func OnChannelID(_ sender: UIButton) {
+    @IBAction func onChannelID(_ sender: UIButton) {
         self.setMessage("Channel ID: \(SgSDK.Instance.GetChannelID())")
+    }
+    
+    @IBAction func onShowFloatingButton(_ sender: UIButton) {
+        SgSDK.Instance.HideFloatingButton()
+    }
+    
+    @IBAction func onLeftTop(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .LeftTop)
+    }
+    
+    @IBAction func onTop(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .Top)
+    }
+    
+    @IBAction func onRightTop(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .RightTop)
+    }
+    
+    @IBAction func onLeft(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .Left)
+    }
+    
+    @IBAction func onRight(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .Right)
+    }
+    
+    @IBAction func onLeftBottom(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .LeftBottom)
+    }
+    
+    @IBAction func onBottom(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .Bottom)
+    }
+    
+    @IBAction func onRightBottom(_ sender: UIButton) {
+        SgSDK.Instance.ShowFloatingButton(place: .RightBottom)
+    }
+    
+    @IBAction func onDestroy(_ sender: UIButton) {
+        SgSDK.Instance.Destroy()
+        self.setMessage("Destroy SgSDK instance.")
     }
     
     func MsgListen(code: Int, msg: String) {

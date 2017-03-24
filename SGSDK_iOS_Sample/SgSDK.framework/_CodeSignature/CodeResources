@@ -4,13 +4,108 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		UQ5cAiLWEy44IBcCUBT1onb77vg=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		MyNHbImVKeco8llRZUeI9KtpNAU=
+		</data>
+		<key>Headers/SgSDK-Swift.h</key>
+		<data>
+		Ik/fj5TmB7pJalYJFLvzLcA1eoo=
+		</data>
+		<key>Headers/SgSDK.h</key>
+		<data>
+		pgFEnRt7lsnaKCRS03PHj7dTM2A=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		uZPkoJtYDdiTk03dF+jfQykyJtc=
+		k7YBh4FipSOFN4d3djOX+q0WkLM=
+		</data>
+		<key>Modules/SgSDK.swiftmodule/x86_64.swiftdoc</key>
+		<data>
+		MCqDP9dFgRU/DU3LjZ6qeDZwPUM=
+		</data>
+		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
+		<data>
+		/Ko3Yg+64rHSfYN7ZXJvuBn1Yus=
+		</data>
+		<key>Modules/module.modulemap</key>
+		<data>
+		sNNQG6cW3tfRKuXRVUsVTFYJi7E=
 		</data>
 	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MyNHbImVKeco8llRZUeI9KtpNAU=
+			</data>
+			<key>hash2</key>
+			<data>
+			XHXb+dKnL5XSIpnsR+L3vnxoALgokwyiVpXHiVBJh3g=
+			</data>
+		</dict>
+		<key>Headers/SgSDK-Swift.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ik/fj5TmB7pJalYJFLvzLcA1eoo=
+			</data>
+			<key>hash2</key>
+			<data>
+			aUx41SMTKcIrVVBJ0VqczFje8QeAEWiCX17k17nMNIo=
+			</data>
+		</dict>
+		<key>Headers/SgSDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pgFEnRt7lsnaKCRS03PHj7dTM2A=
+			</data>
+			<key>hash2</key>
+			<data>
+			LCL3ZbPJeLlBD6kwUMrb2ciKGg9C3kTJAZAdS1GlrV8=
+			</data>
+		</dict>
+		<key>Modules/SgSDK.swiftmodule/x86_64.swiftdoc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MCqDP9dFgRU/DU3LjZ6qeDZwPUM=
+			</data>
+			<key>hash2</key>
+			<data>
+			giE0mNmjaSTqCaO3XIuIhpZ3RWiVp5xYCeVaB5RqMsk=
+			</data>
+		</dict>
+		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/Ko3Yg+64rHSfYN7ZXJvuBn1Yus=
+			</data>
+			<key>hash2</key>
+			<data>
+			RVPS9xI4kcSmmAsxqC5puL7mklxZCJa7kuRuP+63fN4=
+			</data>
+		</dict>
+		<key>Modules/module.modulemap</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sNNQG6cW3tfRKuXRVUsVTFYJi7E=
+			</data>
+			<key>hash2</key>
+			<data>
+			zNy3PnnvlegZnod//TlvZL1tyT7q3vUGjQ5abbmE+Ec=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^</key>

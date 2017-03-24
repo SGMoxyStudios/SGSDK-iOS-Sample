@@ -12,18 +12,18 @@
 		D3535EEE1E84C80600BBFEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3535EEC1E84C80600BBFEE4 /* Main.storyboard */; };
 		D3535EF01E84C80600BBFEE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3535EEF1E84C80600BBFEE4 /* Assets.xcassets */; };
 		D3535EF31E84C80600BBFEE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3535EF11E84C80600BBFEE4 /* LaunchScreen.storyboard */; };
-		D3535F341E84EAEF00BBFEE4 /* SgSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3535F331E84EAEF00BBFEE4 /* SgSDK.framework */; };
-		D3535F351E84EAEF00BBFEE4 /* SgSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3535F331E84EAEF00BBFEE4 /* SgSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3535F381E84EBE600BBFEE4 /* SgSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3535F371E84EBE600BBFEE4 /* SgSDK.framework */; };
+		D3535F391E84EBE600BBFEE4 /* SgSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3535F371E84EBE600BBFEE4 /* SgSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D3535F361E84EAEF00BBFEE4 /* Embed Frameworks */ = {
+		D3535F3A1E84EBE600BBFEE4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3535F351E84EAEF00BBFEE4 /* SgSDK.framework in Embed Frameworks */,
+				D3535F391E84EBE600BBFEE4 /* SgSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		D3535EEF1E84C80600BBFEE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3535EF21E84C80600BBFEE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3535EF41E84C80600BBFEE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3535F331E84EAEF00BBFEE4 /* SgSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SgSDK.framework; sourceTree = "<group>"; };
+		D3535F371E84EBE600BBFEE4 /* SgSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SgSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3535F341E84EAEF00BBFEE4 /* SgSDK.framework in Frameworks */,
+				D3535F381E84EBE600BBFEE4 /* SgSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		D3535EDC1E84C80600BBFEE4 = {
 			isa = PBXGroup;
 			children = (
-				D3535F331E84EAEF00BBFEE4 /* SgSDK.framework */,
+				D3535F371E84EBE600BBFEE4 /* SgSDK.framework */,
 				D3535EE71E84C80600BBFEE4 /* SGSDK_iOS_Sample */,
 				D3535EE61E84C80600BBFEE4 /* Products */,
 			);
@@ -93,7 +93,7 @@
 				D3535EE11E84C80600BBFEE4 /* Sources */,
 				D3535EE21E84C80600BBFEE4 /* Frameworks */,
 				D3535EE31E84C80600BBFEE4 /* Resources */,
-				D3535F361E84EAEF00BBFEE4 /* Embed Frameworks */,
+				D3535F3A1E84EBE600BBFEE4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
