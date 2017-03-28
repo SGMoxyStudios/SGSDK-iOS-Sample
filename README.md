@@ -1,5 +1,9 @@
 # SgSDK-iOS
 
+## SDK 支援的最低iOS版本 8.0
+
+## SDK Sample 支援的最低iOS版本9.0
+
 ## 使用方法
   - 在Xcode內點選General標籤，找到"Embedded Binaries"
   - 點選"+"按鈕將"SgSDK.framework"加入專案

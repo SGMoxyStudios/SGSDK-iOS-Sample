@@ -116,12 +116,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
+@import StoreKit;
 @import WebKit;
 @import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class SKProductsRequest;
+@class SKProductsResponse;
+
+SWIFT_CLASS("_TtC5SgSDK5SgIAP")
+@interface SgIAP : NSObject <SKProductsRequestDelegate, SKRequestDelegate>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+- (void)Init:(NSArray<NSString *> * _Nonnull)productIDs listener:(void (^ _Nonnull)(NSInteger, NSString * _Nonnull))callBack;
+- (void)RequestProductInfo;
+- (void)productsRequest:(SKProductsRequest * _Nonnull)request didReceiveResponse:(SKProductsResponse * _Nonnull)response;
+@end
+
 
 SWIFT_CLASS("_TtC5SgSDK5SgSDK")
 @interface SgSDK : NSObject
@@ -150,6 +162,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SgSDK * _Non
 - (NSString * _Nonnull)GetChannelID;
 - (void)HideFloatingButton;
 - (void)Destroy;
+- (void)SetDomain:(NSString * _Nonnull)domain;
+- (void)IAPInit:(NSArray<NSString *> * _Nonnull)productIDs;
 @end
 
 @class WKWebView;

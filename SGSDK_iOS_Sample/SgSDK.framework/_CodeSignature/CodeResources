@@ -10,11 +10,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		MyNHbImVKeco8llRZUeI9KtpNAU=
+		uxktowYaMFJPkRitW5a5Y7t6uF4=
 		</data>
 		<key>Headers/SgSDK-Swift.h</key>
 		<data>
-		Ik/fj5TmB7pJalYJFLvzLcA1eoo=
+		eZXx2iauXyW+KJIbeIA7CVV/OAA=
 		</data>
 		<key>Headers/SgSDK.h</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		k7YBh4FipSOFN4d3djOX+q0WkLM=
+		DEB674v+Pob0wPR8WfyLTQf4cx0=
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		MCqDP9dFgRU/DU3LjZ6qeDZwPUM=
+		+x9peJhGS3zH6OInoYvJeCZ8Ozw=
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		/Ko3Yg+64rHSfYN7ZXJvuBn1Yus=
+		zvIBhuemJ6fOrANoR0oBEOVY2R4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,22 +43,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MyNHbImVKeco8llRZUeI9KtpNAU=
+			uxktowYaMFJPkRitW5a5Y7t6uF4=
 			</data>
 			<key>hash2</key>
 			<data>
-			XHXb+dKnL5XSIpnsR+L3vnxoALgokwyiVpXHiVBJh3g=
+			St7Ie25yskDGR5+vV9eAbpquO8aR4JZj8qJfOgCbu1c=
 			</data>
 		</dict>
 		<key>Headers/SgSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ik/fj5TmB7pJalYJFLvzLcA1eoo=
+			eZXx2iauXyW+KJIbeIA7CVV/OAA=
 			</data>
 			<key>hash2</key>
 			<data>
-			aUx41SMTKcIrVVBJ0VqczFje8QeAEWiCX17k17nMNIo=
+			Yvkt7gfjFwqgxTXXGwmsuWhy9b3W09jpqFZlyTjpuAk=
 			</data>
 		</dict>
 		<key>Headers/SgSDK.h</key>
@@ -76,22 +76,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MCqDP9dFgRU/DU3LjZ6qeDZwPUM=
+			+x9peJhGS3zH6OInoYvJeCZ8Ozw=
 			</data>
 			<key>hash2</key>
 			<data>
-			giE0mNmjaSTqCaO3XIuIhpZ3RWiVp5xYCeVaB5RqMsk=
+			wwHtejohP9xbHwbB0DrZIDM33nP3Ji6/Jq2YxMaNHHQ=
 			</data>
 		</dict>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/Ko3Yg+64rHSfYN7ZXJvuBn1Yus=
+			zvIBhuemJ6fOrANoR0oBEOVY2R4=
 			</data>
 			<key>hash2</key>
 			<data>
-			RVPS9xI4kcSmmAsxqC5puL7mklxZCJa7kuRuP+63fN4=
+			4d/35wNJWGW2w8C8dZRItF2bfsER21HzJ7P7CO9Ln+I=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
