@@ -125,13 +125,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class SKProductsRequest;
 @class SKProductsResponse;
+@class SKPaymentQueue;
+@class SKPaymentTransaction;
 
 SWIFT_CLASS("_TtC5SgSDK5SgIAP")
-@interface SgIAP : NSObject <SKProductsRequestDelegate, SKRequestDelegate>
+@interface SgIAP : NSObject <SKPaymentTransactionObserver, SKProductsRequestDelegate, SKRequestDelegate>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 - (void)Init:(NSArray<NSString *> * _Nonnull)productIDs listener:(void (^ _Nonnull)(NSInteger, NSString * _Nonnull))callBack;
 - (void)RequestProductInfo;
 - (void)productsRequest:(SKProductsRequest * _Nonnull)request didReceiveResponse:(SKProductsResponse * _Nonnull)response;
+- (void)Buy:(NSInteger)index;
+- (void)paymentQueue:(SKPaymentQueue * _Nonnull)queue updatedTransactions:(NSArray<SKPaymentTransaction *> * _Nonnull)transactions;
 @end
 
 
