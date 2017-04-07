@@ -10,16 +10,46 @@
   - 加入完成後可在專案裡import SgSDK
 
 ## function
-  - func SetListener(listener callBack: @escaping (Int, String) -> Void)
+  - func SetListener(listener callBack: @escaping (SgSDKResult) -> Void)
     - 使用SgSDK第一步就是，設置listener，沒有設置的話後面的function無法使用
-    - listener 帶兩個參數
-      1. code: Int 回傳Error Code
-      2. msg: String 回傳該Error Code代表的訊息
+    - listener 參數SgSDKResult有三個屬性
+      1. Code: Int 回傳Error Code
+      2. Msg: String 回傳該Error Code代表的訊息
+      3. Data: Any? 沒有其他資訊的話會是nil，有資訊的話可以轉換為任一結構
     ```
     SgSDK.Instance.SetListener(listener: MsgListen)
     ...
-    func MsgListen(code: Int, msg: String) {
-        self.setMessage("Error code: \(code), msg: \(msg)")
+    func MsgListen(result: SgSDKResult) {
+        var message = "code: \(result.Code), msg: \(result.Msg)"
+
+        switch result.Code {
+        case 1101:  // SG server validating receipt ok
+            if let data = result.Data {
+               tempPayresponse = data as! SgSDKPayResponse
+               message.append(", receipt: \(tempPayresponse.Receipt) ")
+            }
+        case 1136:  // appstore transaction ok
+            if let data = result.Data {
+                let transaction = data as! SKPaymentTransaction
+                message.append(", product ID:\(transaction.payment.productIdentifier), Date:\(String(describing: transaction.transactionDate))")
+            }
+        case 1141: //Restore
+            if let data = result.Data {
+                let productIds = data as! [String]
+                for productId in productIds {
+                    message.append(", restore product: \(productId) ")
+                }
+            }
+        case 1201:  //Get Order
+            if let data = result.Data {
+                let payresponse = data as! SgSDKPayResponse
+                message.append(", sign: \(payresponse.Sign) ")
+            }
+        default:
+            break
+        }
+
+        self.setMessage(message)
     }
     ```
   - func Init(\_ GameKey: String, \_ AppSecret: String)
@@ -211,4 +241,52 @@
     - 摧毀SgSDK.Instance
     ```
     SgSDK.Instance.Destroy()
+    ```
+
+  - func IAPInit(_ productIDs: [String])
+    - 初始化In-App Purchase
+    - 將商品ID輸入
+    ```
+    productIDs.append("ConsumbleItem")
+    productIDs.append("NonConsumable")
+    productIDs.append("AutoSubscription")
+    productIDs.append("NonAutoSbuscriptions")
+    SgSDK.Instance.IAPInit(productIDs)
+    ```
+
+  - func Pay(payRequest data: SgSDKPayRequest)
+    - 購買商品
+    - SgSDKPayRequest裡的ProductId必填
+    - 前置：IAPInit
+    ```
+    SgSDK.Instance.Pay(payRequest: initPayReq(productId: "your product id", payMethod: "managed"))
+    ...
+    private func initPayReq(productId: String, payMethod: String) -> SgSDKPayRequest {
+        let req = SgSDKPayRequest()
+        req.ProductId = productId
+        req.PaymentMethod = payMethod
+        req.PaymentChannel = "AppStore"
+        req.ServerId = "Server ID"
+        req.ServerName = "Server Name"
+        req.RoleId = "9487"
+        req.RoleName = "Roger"
+        req.RoleLevel = 99
+        req.PayNotifyUrl = "PAY_NOTIFY_URL"
+        return req
+    }
+    ```
+
+  - func GetOrder(gameKey: String, payResponse: SgSDKPayResponse)
+    - 取得訂單
+    - 需要之前購買時從Sg Server拿到的SgSDKPayResponse
+    ```
+    SgSDK.Instance.GetOrder(gameKey: GameKey, payResponse: tempPayresponse)
+    ```
+
+  - func RestorePurchase()
+    - 回復商品
+    - 只有Non-Consumable, Auto-renewing subscripton這兩種商品會用到
+    - 前置：IAPInit
+    ```
+    SgSDK.Instance.RestorePurchase()
     ```

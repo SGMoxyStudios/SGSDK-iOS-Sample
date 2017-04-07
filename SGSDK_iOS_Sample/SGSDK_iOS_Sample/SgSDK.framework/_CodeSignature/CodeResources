@@ -4,17 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		UQ5cAiLWEy44IBcCUBT1onb77vg=
-		</data>
 		<key>Assets.car</key>
 		<data>
-		uxktowYaMFJPkRitW5a5Y7t6uF4=
+		pEkn4kPIaYoVCyRJkPCScJYHc6I=
 		</data>
 		<key>Headers/SgSDK-Swift.h</key>
 		<data>
-		+zNY69nhj2D5eLv9kS/Oe3lIPEc=
+		gPgflvzTRr2MzfH6CdY3Am96IwY=
 		</data>
 		<key>Headers/SgSDK.h</key>
 		<data>
@@ -22,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DEB674v+Pob0wPR8WfyLTQf4cx0=
+		Nv3bqmYantmfeCjUSHPstvgVeuE=
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		+x9peJhGS3zH6OInoYvJeCZ8Ozw=
+		klLa2H+6Zjox/EgZFPHVFRrF4qc=
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ZRf8IELO3/ooUr0TbPNWJEu+dzY=
+		EvBAaJtK9cU7Uk937+lcpw6GrPM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,22 +39,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uxktowYaMFJPkRitW5a5Y7t6uF4=
+			pEkn4kPIaYoVCyRJkPCScJYHc6I=
 			</data>
 			<key>hash2</key>
 			<data>
-			St7Ie25yskDGR5+vV9eAbpquO8aR4JZj8qJfOgCbu1c=
+			HzhAf6TbrtUCbqQvJhfL2ToFuDFytkhGfc49UtTshUc=
 			</data>
 		</dict>
 		<key>Headers/SgSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+zNY69nhj2D5eLv9kS/Oe3lIPEc=
+			gPgflvzTRr2MzfH6CdY3Am96IwY=
 			</data>
 			<key>hash2</key>
 			<data>
-			dvKDvRjbHPv6bcY+f1HyObRNQJ9hL0nf9R4EiS8zVmw=
+			JqZCcslBlUNHCGrjuvqiLqEbcnqhl8EwKey16nUP9Cs=
 			</data>
 		</dict>
 		<key>Headers/SgSDK.h</key>
@@ -76,22 +72,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+x9peJhGS3zH6OInoYvJeCZ8Ozw=
+			klLa2H+6Zjox/EgZFPHVFRrF4qc=
 			</data>
 			<key>hash2</key>
 			<data>
-			wwHtejohP9xbHwbB0DrZIDM33nP3Ji6/Jq2YxMaNHHQ=
+			oBrhEt8HaMgx1iu4JdRMDnouW/lQLWx/ZkrNqTwfhe4=
 			</data>
 		</dict>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZRf8IELO3/ooUr0TbPNWJEu+dzY=
+			EvBAaJtK9cU7Uk937+lcpw6GrPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			rh/GnXvsuYLoEwJQYiUXn5dY4Ai7k0gVTkK6IqG4UM4=
+			bFiDcQdBC5ex9t8chUla38696xXimT4T3vI2yah+r9c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
