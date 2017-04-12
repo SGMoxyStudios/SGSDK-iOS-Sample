@@ -11,7 +11,7 @@ import SgSDK
 import StoreKit
 
 class MenuViewController: UIViewController {
-
+    
     let GameKey: String = "d7e73390-d7fd-11e6-9074-21c247f06802"
     let AppSecret: String = "d7d7c810-d7ee-11e6-9e86-db4f79aeee86"
     
@@ -19,45 +19,45 @@ class MenuViewController: UIViewController {
     var tempPayresponse: SgSDKPayResponse!
     
     let functionNames = ["------SgSDK------",
-                        "Init",
-                        "Signup",
-                        "Login",
-                        "Logout",
-                        "Get Open ID",
-                        "Get Session ID",
-                        "Get Token",
-                        "Forgot password",
-                        "Change password",
-                        "Parental lock",
-                        "My kid",
-                        "My account",
-                        "OpenID",
-                        "Verify session",
-                        "Verify token",
-                        "Is login",
-                        "Channel ID",
-                        "Destroy",
-                        "------統計------",
-                        "Game start",
-                        "Game stop",
-                        "------浮動按鈕------",
-                        "Show floating button",
-                        "Left top",
-                        "Top",
-                        "Right top",
-                        "Left",
-                        "Right",
-                        "Left bottom",
-                        "Bottom",
-                        "Right bottom",
-                        "------In-App Purchase------",
-                        "IAP init",
-                        "Consumable item",
-                        "Non consumable item",
-                        "Auto renew subscription",
-                        "Non auto subscription",
-                        "Get order",
-                        "Restore"]
+                         "Init",
+                         "Signup",
+                         "Login",
+                         "Logout",
+                         "Get Open ID",
+                         "Get Session ID",
+                         "Get Token",
+                         "Forgot password",
+                         "Change password",
+                         "Parental lock",
+                         "My kid",
+                         "My account",
+                         "OpenID",
+                         "Verify session",
+                         "Verify token",
+                         "Is login",
+                         "Channel ID",
+                         "Destroy",
+                         "------統計------",
+                         "Game start",
+                         "Game stop",
+                         "------浮動按鈕------",
+                         "Show floating button",
+                         "Left top",
+                         "Top",
+                         "Right top",
+                         "Left",
+                         "Right",
+                         "Left bottom",
+                         "Bottom",
+                         "Right bottom",
+                         "------In-App Purchase------",
+                         "IAP init",
+                         "Consumable item",
+                         "Non consumable item",
+                         "Auto renew subscription",
+                         "Non auto subscription",
+                         "Get order",
+                         "Restore"]
     
     enum eFunction: String {
         case Init = "Init"
@@ -101,10 +101,10 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -113,7 +113,7 @@ class MenuViewController: UIViewController {
     @IBAction func onBack(_ sender: UIBarButtonItem) {
         self.slideMenuController()?.closeLeft()
     }
-
+    
 }
 
 extension MenuViewController: UITableViewDataSource {
@@ -136,9 +136,6 @@ extension MenuViewController: UITableViewDataSource {
 extension MenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.slideMenuController()?.closeLeft()
-//        if let main = self.slideMenuController()?.mainViewController as? MessageViewController {
-//            main.SetMessage(functionNames[indexPath.row])
-//        }
         let function = eFunction(rawValue: self.functionNames[indexPath.row]) ?? eFunction.Unknown
         onFunction(function)
         tableView.deselectRow(at: indexPath, animated: false)
@@ -288,25 +285,11 @@ extension MenuViewController {
     }
     
     func onOpenID() {
-        SgSDK.Instance.OpenID() {
-            (any) -> Void in
-            if let openid = any as? Int {
-                self.setMessage("OpenID:\(openid)")
-            }
-        }
+        SgSDK.Instance.OpenID()
     }
     
     func onVerifySession() {
-        SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "") {
-            (any) -> Void in
-            if let verify = any as? Verify {
-                if verify.Code == SgSDK.eSDKErrorCode.VerifySession_Ok.rawValue {
-                    self.setMessage("VerifySession, code: \(verify.Code), msg: \(verify.Msg), Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
-                } else {
-                    self.setMessage("Error code: \(verify.Code), msg: \(verify.Msg)")
-                }
-            }
-        }
+        SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "")
     }
     
     func onVerifyToken() {
@@ -315,16 +298,7 @@ extension MenuViewController {
             return
         }
         
-        SgSDK.Instance.VerifyToken(token: token) {
-            (any) -> Void in
-            if let verify = any as? Verify {
-                if verify.Code == SgSDK.eSDKErrorCode.VerifyToken_Ok.rawValue {
-                    self.setMessage("VerifyToken, code: \(verify.Code), msg: \(verify.Msg), Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
-                } else {
-                    self.setMessage("Error code: \(verify.Code), msg: \(verify.Msg)")
-                }
-            }
-        }
+        SgSDK.Instance.VerifyToken(token: token)
     }
     
     func onGameStart() {
@@ -415,7 +389,7 @@ extension MenuViewController {
             return
         }
         
-        SgSDK.Instance.GetOrder(gameKey: GameKey, payResponse: tempPayresponse)
+        SgSDK.Instance.GetOrder(GameKey, tempPayresponse)
     }
     
     func onRestore() {
@@ -440,6 +414,11 @@ extension MenuViewController {
         var message = "code: \(result.Code), msg: \(result.Msg)"
         
         switch result.Code {
+        case 901, 1001:   //Verify session / token
+            if let data = result.Data {
+                let verify = data as! Verify
+                message.append(", Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
+            }
         case 1101:  // SG server validating receipt ok
             if let data = result.Data {
                 tempPayresponse = data as! SgSDKPayResponse
@@ -461,6 +440,11 @@ extension MenuViewController {
             if let data = result.Data {
                 let payresponse = data as! SgSDKPayResponse
                 message.append(", sign: \(payresponse.Sign) ")
+            }
+        case 8004:
+            if let data = result.Data {
+                let openid = data as! Int
+                message.append(", open id: \(openid)")
             }
         default:
             break

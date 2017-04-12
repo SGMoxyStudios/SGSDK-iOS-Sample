@@ -107,42 +107,27 @@
     ```
     SgSDK.Instance.MyAccount()
     ```
-  - func OpenID(listener callBack: @escaping (Any) -> Void)
+  - func OpenID()
     - 前置：Init()
     - 回傳：OpenID
     ```
-    SgSDK.Instance.OpenID() {
-            (any) -> Void in
-            if let openid = any as? Int {
-                print("OpenID:\(openid)")
-            }
-        }
+    SgSDK.Instance.OpenID()
     ```
 
-  - func VerifySession(appId: String, session: String, uid: String, signature: String, listener callBack: @escaping (Any) -> Void)
+  - func VerifySession(appId: String, session: String, uid: String, signature: String)
     - 前置：Init()
     - Session ID登入驗證
-    - 回傳：Account, OpenID, Password, EMail
+    - 回傳：Verify結構，結構有六個屬性Code, Msg, Account, OpenID, Password, EMail
     ```
-    SgSDK.Instance.VerifySession(appId: "YourAppId", session: "SessionID", uid: "UID", signature: "Signature") {
-            (any) -> Void in
-            if let verify = any as? Verify {
-                print("VerifySession, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
-            }
-        }
+    SgSDK.Instance.VerifySession(appId: "YourAppId", session: "SessionID", uid: "UID", signature: "Signature")
     ```
 
-  - public func VerifyToken(token: String, listener callBack: @escaping (Any) -> Void)
+  - public func VerifyToken(token: String)
     - 前置：Init()
     - Token 登入驗證
-    - 回傳：Account, OpenID, Password, EMail
+    - 回傳：Verify結構，結構有六個屬性Code, Msg, Account, OpenID, Password, EMail
     ```
-    SgSDK.Instance.VerifyToken(token: "Token") {
-            (any) -> Void in
-            if let verify = any as? Verify {
-                print("VerifyToken, Account: \(verify.Account), OpenID: \(verify.OpenID), Password: \(verify.Password), Email: \(verify.EMail)")
-            }
-        }
+    SgSDK.Instance.VerifyToken(token: "Token")
     ```
 
   - func Logout()
@@ -276,11 +261,11 @@
     }
     ```
 
-  - func GetOrder(gameKey: String, payResponse: SgSDKPayResponse)
+  - func GetOrder(_ gameKey: String, _ payResponse: SgSDKPayResponse)
     - 取得訂單
     - 需要之前購買時從Sg Server拿到的SgSDKPayResponse
     ```
-    SgSDK.Instance.GetOrder(gameKey: GameKey, payResponse: tempPayresponse)
+    SgSDK.Instance.GetOrder(GameKey, tempPayresponse)
     ```
 
   - func RestorePurchase()

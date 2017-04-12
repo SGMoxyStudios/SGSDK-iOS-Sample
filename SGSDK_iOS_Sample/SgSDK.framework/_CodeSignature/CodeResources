@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		pEkn4kPIaYoVCyRJkPCScJYHc6I=
+		h/o/l+TXFnE3wTWhgDunqn6ZU9M=
 		</data>
 		<key>Headers/SgSDK-Swift.h</key>
 		<data>
-		gPgflvzTRr2MzfH6CdY3Am96IwY=
+		KldS+J+/eaFpM07OPfh5kKlTbh8=
 		</data>
 		<key>Headers/SgSDK.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Nv3bqmYantmfeCjUSHPstvgVeuE=
+		AsLBQXpdxF9YO/aHt6ftvH/cOLo=
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/SgSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		EvBAaJtK9cU7Uk937+lcpw6GrPM=
+		eLB8QG7h+smzGzuZUrZdXL+U4tg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,22 +39,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pEkn4kPIaYoVCyRJkPCScJYHc6I=
+			h/o/l+TXFnE3wTWhgDunqn6ZU9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			HzhAf6TbrtUCbqQvJhfL2ToFuDFytkhGfc49UtTshUc=
+			azYved/bSaNyzR/Zjr8jP3qxEjMpNIy2SJjVgHYUlqY=
 			</data>
 		</dict>
 		<key>Headers/SgSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gPgflvzTRr2MzfH6CdY3Am96IwY=
+			KldS+J+/eaFpM07OPfh5kKlTbh8=
 			</data>
 			<key>hash2</key>
 			<data>
-			JqZCcslBlUNHCGrjuvqiLqEbcnqhl8EwKey16nUP9Cs=
+			VTIRDdvefGWivKtAv2ZYfleKuWVB+b/zJ6MYm75b/nI=
 			</data>
 		</dict>
 		<key>Headers/SgSDK.h</key>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EvBAaJtK9cU7Uk937+lcpw6GrPM=
+			eLB8QG7h+smzGzuZUrZdXL+U4tg=
 			</data>
 			<key>hash2</key>
 			<data>
-			bFiDcQdBC5ex9t8chUla38696xXimT4T3vI2yah+r9c=
+			YZzD0hfPGuQvK0VpvmGpkYLS22VHc+4plbzdMK2xZRU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

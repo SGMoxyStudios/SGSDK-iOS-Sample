@@ -154,9 +154,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SgSDK * _Non
 - (void)ParentalLock;
 - (void)MyKid;
 - (void)MyAccount;
-- (void)OpenIDWithListener:(void (^ _Nonnull)(id _Nonnull))callBack;
-- (void)VerifySessionWithAppId:(NSString * _Nonnull)appId session:(NSString * _Nonnull)session uid:(NSString * _Nonnull)uid signature:(NSString * _Nonnull)signature listener:(void (^ _Nonnull)(id _Nonnull))callBack;
-- (void)VerifyTokenWithToken:(NSString * _Nonnull)token listener:(void (^ _Nonnull)(id _Nonnull))callBack;
+- (void)OpenID;
+- (void)VerifySessionWithAppId:(NSString * _Nonnull)appId session:(NSString * _Nonnull)session uid:(NSString * _Nonnull)uid signature:(NSString * _Nonnull)signature;
+- (void)VerifyTokenWithToken:(NSString * _Nonnull)token;
 - (void)Logout;
 - (void)GameStart;
 - (void)GameStop;
