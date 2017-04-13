@@ -168,6 +168,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SgSDK * _Non
 - (void)Destroy;
 - (void)SetDomain:(NSString * _Nonnull)domain;
 - (void)IAPInit:(NSArray<NSString *> * _Nonnull)productIDs;
+- (void)GetOrder:(NSString * _Nonnull)orderId :(NSString * _Nonnull)gameKey :(NSInteger)openId :(NSString * _Nonnull)sign;
 - (void)RestorePurchase;
 @end
 

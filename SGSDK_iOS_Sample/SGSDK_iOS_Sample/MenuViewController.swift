@@ -389,7 +389,12 @@ extension MenuViewController {
             return
         }
         
-        SgSDK.Instance.GetOrder(GameKey, tempPayresponse)
+        guard let openid = SgSDK.Instance.GetOpenID() else {
+            setMessage("Please login.")
+            return
+        }
+        
+        SgSDK.Instance.GetOrder(tempPayresponse.OrderId, GameKey, openid, tempPayresponse.Sign)
     }
     
     func onRestore() {

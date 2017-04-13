@@ -261,11 +261,11 @@
     }
     ```
 
-  - func GetOrder(_ gameKey: String, _ payResponse: SgSDKPayResponse)
-    - 取得訂單
-    - 需要之前購買時從Sg Server拿到的SgSDKPayResponse
+  - func GetOrder(_ orderId: String, _ gameKey: String, _ openId: Int, _ sign: String)
+    - 取得完整訂單
+    - 需要之前購買時從Sg Server拿到的SgSDKPayResponse裡的OrderId和Sign和登入後可以使用的GetOpenID()取得openid
     ```
-    SgSDK.Instance.GetOrder(GameKey, tempPayresponse)
+    SgSDK.Instance.GetOrder(tempPayresponse.OrderId, GameKey, openid, tempPayresponse.Sign)
     ```
 
   - func RestorePurchase()
