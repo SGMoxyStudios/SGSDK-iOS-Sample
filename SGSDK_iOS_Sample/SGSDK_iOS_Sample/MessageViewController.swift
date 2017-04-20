@@ -16,6 +16,7 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
 
         Message.text.removeAll()
+        Message.text = "SG SDK Demo.\n"
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +26,10 @@ class MessageViewController: UIViewController {
     
     @IBAction func onMenu(_ sender: UIBarButtonItem) {
         self.slideMenuController()?.openLeft()
+    }
+    
+    @IBAction func onClear(_ sender: UIBarButtonItem) {
+        Message.text.removeAll()
     }
 
     public func SetMessage(_ msg: String) {

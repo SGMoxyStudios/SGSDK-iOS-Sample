@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31CEEFF1EA8897B00A7552D /* SGSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31CEEFE1EA8897B00A7552D /* SGSDK.framework */; };
+		D31CEF001EA8897B00A7552D /* SGSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D31CEEFE1EA8897B00A7552D /* SGSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3535EE91E84C80600BBFEE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3535EE81E84C80600BBFEE4 /* AppDelegate.swift */; };
 		D3535EEB1E84C80600BBFEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3535EEA1E84C80600BBFEE4 /* ViewController.swift */; };
 		D3535EEE1E84C80600BBFEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3535EEC1E84C80600BBFEE4 /* Main.storyboard */; };
 		D3535EF01E84C80600BBFEE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3535EEF1E84C80600BBFEE4 /* Assets.xcassets */; };
 		D3535EF31E84C80600BBFEE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3535EF11E84C80600BBFEE4 /* LaunchScreen.storyboard */; };
-		D360E5FF1E9F631E00B93869 /* SgSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D360E5FE1E9F631E00B93869 /* SgSDK.framework */; };
-		D360E6001E9F631E00B93869 /* SgSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D360E5FE1E9F631E00B93869 /* SgSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D366042D1E9760230027445F /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366042C1E9760230027445F /* SlideMenuController.swift */; };
 		D366042F1E9763810027445F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366042E1E9763810027445F /* MessageViewController.swift */; };
 		D36604311E9763930027445F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36604301E9763930027445F /* MenuViewController.swift */; };
@@ -21,13 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D360E6011E9F631E00B93869 /* Embed Frameworks */ = {
+		D31CEF011EA8897B00A7552D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D360E6001E9F631E00B93869 /* SgSDK.framework in Embed Frameworks */,
+				D31CEF001EA8897B00A7552D /* SGSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D31CEEFE1EA8897B00A7552D /* SGSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSDK.framework; sourceTree = "<group>"; };
 		D3535EE51E84C80600BBFEE4 /* SGSDK_iOS_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGSDK_iOS_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3535EE81E84C80600BBFEE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3535EEA1E84C80600BBFEE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		D3535EEF1E84C80600BBFEE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3535EF21E84C80600BBFEE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3535EF41E84C80600BBFEE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D360E5FE1E9F631E00B93869 /* SgSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SgSDK.framework; sourceTree = "<group>"; };
 		D366042C1E9760230027445F /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		D366042E1E9763810027445F /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D36604301E9763930027445F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39F2B3E1E95C6C200E006E4 /* StoreKit.framework in Frameworks */,
-				D360E5FF1E9F631E00B93869 /* SgSDK.framework in Frameworks */,
+				D31CEEFF1EA8897B00A7552D /* SGSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		D3535EDC1E84C80600BBFEE4 = {
 			isa = PBXGroup;
 			children = (
-				D360E5FE1E9F631E00B93869 /* SgSDK.framework */,
+				D31CEEFE1EA8897B00A7552D /* SGSDK.framework */,
 				D3535EE71E84C80600BBFEE4 /* SGSDK_iOS_Sample */,
 				D3535EE61E84C80600BBFEE4 /* Products */,
 				D3DFE6051E8B514200555648 /* Frameworks */,
@@ -114,7 +114,7 @@
 				D3535EE11E84C80600BBFEE4 /* Sources */,
 				D3535EE21E84C80600BBFEE4 /* Frameworks */,
 				D3535EE31E84C80600BBFEE4 /* Resources */,
-				D360E6011E9F631E00B93869 /* Embed Frameworks */,
+				D31CEF011EA8897B00A7552D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,14 +318,14 @@
 					"$(PROJECT_DIR)/SGSDK_iOS_Sample",
 				);
 				INFOPLIST_FILE = SGSDK_iOS_Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartgamesltd.sdktest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -341,14 +341,14 @@
 					"$(PROJECT_DIR)/SGSDK_iOS_Sample",
 				);
 				INFOPLIST_FILE = SGSDK_iOS_Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartgamesltd.sdktest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -1,19 +1,19 @@
 //
-//  SgSDK.h
-//  SgSDK
+//  SGSDK.h
+//  SGSDK
 //
-//  Created by 張又壬 on 2017/3/24.
-//  Copyright © 2017年 SmartGames. All rights reserved.
+//  Created by 張又壬 on 2017/4/18.
+//  Copyright © 2017年 smartgamesltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for SgSDK.
-FOUNDATION_EXPORT double SgSDKVersionNumber;
+//! Project version number for SGSDK.
+FOUNDATION_EXPORT double SGSDKVersionNumber;
 
-//! Project version string for SgSDK.
-FOUNDATION_EXPORT const unsigned char SgSDKVersionString[];
+//! Project version string for SGSDK.
+FOUNDATION_EXPORT const unsigned char SGSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <SgSDK/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <SGSDK/PublicHeader.h>
 
 

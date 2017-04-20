@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SgSDK
+import SGSDK
 import StoreKit
 
 class MenuViewController: UIViewController {
@@ -16,7 +16,7 @@ class MenuViewController: UIViewController {
     let AppSecret: String = "d7d7c810-d7ee-11e6-9e86-db4f79aeee86"
     
     var productIDs = [String]()
-    var tempPayresponse: SgSDKPayResponse!
+    var tempPayresponse: SGPayResponse!
     
     let functionNames = ["------SgSDK------",
                          "Init",
@@ -33,7 +33,7 @@ class MenuViewController: UIViewController {
                          "My account",
                          "OpenID",
                          "Verify session",
-                         "Verify token",
+                         "Login by token",
                          "Is login",
                          "Channel ID",
                          "Destroy",
@@ -74,7 +74,7 @@ class MenuViewController: UIViewController {
         case MyAccount = "My account"
         case OpenId = "OpenID"
         case VerifySession = "Verify session"
-        case VerifyToken = "Verify token"
+        case LoginByToken = "Login by token"
         case IsLogin = "Is login"
         case ChannelId = "Channel ID"
         case Destroy = "Destroy"
@@ -173,10 +173,10 @@ extension MenuViewController {
             onOpenID()
         case .VerifySession:
             onVerifySession()
-        case .VerifyToken:
-            onVerifyToken()
+        case .LoginByToken:
+            onLoginByToken()
         case .IsLogin:
-            onIsLogined()
+            onIsLogin()
         case .ChannelId:
             onChannelID()
         case .Destroy:
@@ -223,29 +223,29 @@ extension MenuViewController {
     }
     
     func onInit() {
-        SgSDK.Instance.SetListener(listener: MsgListen)
-        SgSDK.Instance.Init(GameKey, AppSecret)
+        SGSDK.Instance.SetListener(listener: MsgListen)
+        SGSDK.Instance.Init(GameKey: GameKey, AppSecret: AppSecret)
     }
     
     func onLogin() {
-        SgSDK.Instance.Login()
+        SGSDK.Instance.Login()
     }
     
     func onLogout() {
-        SgSDK.Instance.Logout()
+        SGSDK.Instance.Logout()
         self.setMessage("Logout.")
     }
     
     func onGetOpenID() {
-        if let msg = SgSDK.Instance.GetOpenID() {
-            setMessage("\(msg)")
+        if let msg = SGSDK.Instance.GetOpenID() {
+            setMessage(msg)
         } else {
             setMessage("Please login.")
         }
     }
     
     func onGetSessionID() {
-        if let msg = SgSDK.Instance.GetSessionID() {
+        if let msg = SGSDK.Instance.GetSessionID() {
             setMessage(msg)
         } else {
             setMessage("Please login.")
@@ -253,7 +253,7 @@ extension MenuViewController {
     }
     
     func onGetToken() {
-        if let msg = SgSDK.Instance.GetToken() {
+        if let msg = SGSDK.Instance.GetToken() {
             setMessage(msg)
         } else {
             setMessage("Please login.")
@@ -261,102 +261,112 @@ extension MenuViewController {
     }
     
     func onSignup() {
-        SgSDK.Instance.Signup()
+        SGSDK.Instance.Signup()
     }
     
     func onForgotPassword() {
-        SgSDK.Instance.ForgotPassword()
+        SGSDK.Instance.ForgotPassword()
     }
     
     func onChangePassword() {
-        SgSDK.Instance.ChangePassword()
+        SGSDK.Instance.ChangePassword()
     }
     
     func onParentalLock() {
-        SgSDK.Instance.ParentalLock()
+        SGSDK.Instance.ParentalLock()
     }
     
     func onMyKid() {
-        SgSDK.Instance.MyKid()
+        SGSDK.Instance.MyKid()
     }
     
     func onMyAccount() {
-        SgSDK.Instance.MyAccount()
+        SGSDK.Instance.MyAccount()
     }
     
     func onOpenID() {
-        SgSDK.Instance.OpenID()
+        SGSDK.Instance.OpenID()
     }
     
     func onVerifySession() {
-        SgSDK.Instance.VerifySession(appId: "", session: "", uid: "", signature: "")
+        guard let session = SGSDK.Instance.GetSessionID() else {
+            print("Please Login.")
+            return
+        }
+        
+        guard let openid = SGSDK.Instance.GetOpenID() else {
+            print("Please Login.")
+            return
+        }
+        
+        SGSDK.Instance.VerifySession(gameKey: GameKey, sessionId: session, openId: openid, sign: "")
     }
     
-    func onVerifyToken() {
-        guard let token = SgSDK.Instance.GetToken() else {
+    func onLoginByToken() {
+        guard let token = SGSDK.Instance.GetToken() else {
             self.setMessage("Please login.")
             return
         }
         
-        SgSDK.Instance.VerifyToken(token: token)
+        SGSDK.Instance.LoginByToken(token: token)
     }
     
     func onGameStart() {
-        SgSDK.Instance.GameStart()
+        SGSDK.Instance.GameStart()
         self.setMessage("Game start.")
     }
     
     func onGameStop() {
-        SgSDK.Instance.GameStop()
+        SGSDK.Instance.GameStop()
     }
     
-    func onIsLogined() {
-        self.setMessage("Is login? \(SgSDK.Instance.IsLogined())")
+    func onIsLogin() {
+        self.setMessage("Is login? \(SGSDK.Instance.IsLogin())")
     }
     
     func onChannelID() {
-        self.setMessage("Channel ID: \(SgSDK.Instance.GetChannelID())")
+        self.setMessage("Channel ID: \(SGSDK.Instance.GetChannelID())")
     }
     
     func onShowFloatingButton() {
-        SgSDK.Instance.HideFloatingButton()
+        SGSDK.Instance.HideFloatingButton()
     }
     
     func onLeftTop() {
-        SgSDK.Instance.ShowFloatingButton(place: .LeftTop)
+        SGSDK.Instance.ShowFloatingButton(place: .LeftTop)
     }
     
     func onTop() {
-        SgSDK.Instance.ShowFloatingButton(place: .Top)
+        SGSDK.Instance.ShowFloatingButton(place: .Top)
     }
     
     func onRightTop() {
-        SgSDK.Instance.ShowFloatingButton(place: .RightTop)
+        SGSDK.Instance.ShowFloatingButton(place: .RightTop)
     }
     
     func onLeft() {
-        SgSDK.Instance.ShowFloatingButton(place: .Left)
+        SGSDK.Instance.ShowFloatingButton(place: .Left)
     }
     
     func onRight() {
-        SgSDK.Instance.ShowFloatingButton(place: .Right)
+        SGSDK.Instance.ShowFloatingButton(place: .Right)
     }
     
     func onLeftBottom() {
-        SgSDK.Instance.ShowFloatingButton(place: .LeftBottom)
+        SGSDK.Instance.ShowFloatingButton(place: .LeftBottom)
     }
     
     func onBottom() {
-        SgSDK.Instance.ShowFloatingButton(place: .Bottom)
+        SGSDK.Instance.ShowFloatingButton(place: .Bottom)
     }
     
     func onRightBottom() {
-        SgSDK.Instance.ShowFloatingButton(place: .RightBottom)
+        SGSDK.Instance.ShowFloatingButton(place: .RightBottom)
     }
     
     func onDestroy() {
-        SgSDK.Instance.Destroy()
-        self.setMessage("Destroy SgSDK instance.")
+        SGSDK.Instance.Destroy()
+        self.setMessage("Destroy SGSDK instance.")
     }
     
     func onIAPInit() {
@@ -364,23 +374,23 @@ extension MenuViewController {
         productIDs.append("NonConsumable")
         productIDs.append("AutoSubscription")
         productIDs.append("NonAutoSbuscriptions")
-        SgSDK.Instance.IAPInit(productIDs)
+        SGSDK.Instance.IAPInit(productIDs: productIDs)
     }
     
     func onConsumable() {
-        SgSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[0], payMethod: "managed"))
+        SGSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[0], payMethod: "managed"))
     }
     
     func onNonconsumable() {
-        SgSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[1], payMethod: "managed"))
+        SGSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[1], payMethod: "managed"))
     }
     
     func onAutoSubscription() {
-        SgSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[2], payMethod: "subscription"))
+        SGSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[2], payMethod: "subscription"))
     }
     
     func onNonAutoSubscription() {
-        SgSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[3], payMethod: "subscription"))
+        SGSDK.Instance.Pay(payRequest: initPayReq(productId: productIDs[3], payMethod: "subscription"))
     }
     
     func onGetOrder() {
@@ -389,44 +399,52 @@ extension MenuViewController {
             return
         }
         
-        guard let openid = SgSDK.Instance.GetOpenID() else {
+        guard let openid = SGSDK.Instance.GetOpenID() else {
             setMessage("Please login.")
             return
         }
         
-        SgSDK.Instance.GetOrder(tempPayresponse.OrderId, GameKey, openid, tempPayresponse.Sign)
+        SGSDK.Instance.GetOrder(orderId: tempPayresponse.OrderId, gameKey: GameKey, openId: openid, sign: tempPayresponse.Sign)
     }
     
     func onRestore() {
-        SgSDK.Instance.RestorePurchase()
+        SGSDK.Instance.RestorePurchase()
     }
     
-    private func initPayReq(productId: String, payMethod: String) -> SgSDKPayRequest {
-        let req = SgSDKPayRequest()
+    private func initPayReq(productId: String, payMethod: String) -> SGPayRequest {
+        let req = SGPayRequest()
         req.ProductId = productId
         req.PaymentMethod = payMethod
         req.PaymentChannel = "AppStore"
         req.ServerId = "Server ID"
         req.ServerName = "Server Name"
         req.RoleId = "9487"
-        req.RoleName = "Roger"
+        req.RoleName = "C8763"
         req.RoleLevel = 99
-        req.PayNotifyUrl = "PAY_NOTIFY_URL"
+        req.Price = Float(30)
+        req.ProductName = productId
+        
         return req
     }
     
-    func MsgListen(result: SgSDKResult) {
-        var message = "code: \(result.Code), msg: \(result.Msg)"
+    func MsgListen(result: SGListenResult) {
+        var message = "Code: \(result.Code), Message: \(result.Msg)"
         
         switch result.Code {
-        case 901, 1001:   //Verify session / token
+        case 201, 301, 901, 1001: //Login, Signup, Verify session, Login by token
             if let data = result.Data {
-                let verify = data as! Verify
-                message.append(", Account: \(verify.Account!), OpenID: \(verify.OpenID!), Password: \(verify.Password!), Email: \(verify.EMail!)")
+                let member = data as! SGMamber
+                message.append("\nAccount: \(member.Account!)\nOpenID: \(member.OpenId!)\nToken: \(member.Token!)\nCreateTime: \(member.CreatTime!)\nLoginTime: \(member.LoginTime!)\nLanguage: \(member.Language!)\nChannel: \(member.Channel!)\nPhone: \(member.Phone!)\nEmail: \(member.EMail!)\nSessionID: \(member.SessionId!)\n")
+                if let children = member.Children {
+                    for child in children {
+                        message.append("Name: \(child.Name!), Sex: \(child.Sex!), Face: \(child.Face!), Birthday: \(child.Birthday!)\n")
+                    }
+                }
+                
             }
         case 1101:  // SG server validating receipt ok
             if let data = result.Data {
-                tempPayresponse = data as! SgSDKPayResponse
+                tempPayresponse = data as! SGPayResponse
                 message.append(", receipt: \(tempPayresponse.Receipt) ")
             }
         case 1136:  // appstore transaction ok
@@ -443,12 +461,12 @@ extension MenuViewController {
             }
         case 1201:  //Get Order
             if let data = result.Data {
-                let payresponse = data as! SgSDKPayResponse
+                let payresponse = data as! SGPayResponse
                 message.append(", sign: \(payresponse.Sign) ")
             }
         case 8004:
             if let data = result.Data {
-                let openid = data as! Int
+                let openid = data as! String
                 message.append(", open id: \(openid)")
             }
         default:

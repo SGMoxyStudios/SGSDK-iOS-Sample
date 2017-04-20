@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SgSDK
 import StoreKit
 
 class ViewController: SlideMenuController {

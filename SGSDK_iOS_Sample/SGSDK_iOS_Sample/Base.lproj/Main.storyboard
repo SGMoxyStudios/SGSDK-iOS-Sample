@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,11 +20,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="12.143928035982009"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Cun-2Q-JXY">
@@ -114,10 +116,15 @@
                                     <constraint firstAttribute="height" constant="64" id="hxN-fp-759"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="SgSDK" id="i4G-jS-yeb">
+                                    <navigationItem title="SGSDK" id="i4G-jS-yeb">
                                         <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="edk-9r-Mfd">
                                             <connections>
                                                 <action selector="onMenu:" destination="ulK-R0-atW" id="XzO-gM-Uwc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="hpH-UC-pAg">
+                                            <connections>
+                                                <action selector="onClear:" destination="ulK-R0-atW" id="C1e-CC-ymM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
