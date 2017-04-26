@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		La3BwHe2TdrQNVENFGnWCsIhZbA=
+		qQiiZoCAd/t7uFdiKE9N43D9a28=
 		</data>
 		<key>Headers/SGSDK-Swift.h</key>
 		<data>
-		NVoNYvAWxlZ9YFapMwVDKQE6F/A=
+		EMwvEEKOA8WXPufqSj9dqxqiiJ4=
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yy4dMaqSWYeoi3iBGGqHvVSJz20=
+		jFd4/PtIRYbBpz+CkvG2HLLEfbY=
 		</data>
 		<key>Modules/SGSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		s3/+fGOHI76lCermubbl/XwQKMY=
+		5eDH6A3qMETJxUW8qQXc731X2Ig=
 		</data>
 		<key>Modules/SGSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Y7bV1vZFc3gfRqPEYWgWo1VXWzg=
+		E4ufQuLzi31VSJcdRKYIp5x/p4M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,22 +39,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			La3BwHe2TdrQNVENFGnWCsIhZbA=
+			qQiiZoCAd/t7uFdiKE9N43D9a28=
 			</data>
 			<key>hash2</key>
 			<data>
-			GazOWe5c1yp/uqTyZomBs1xscbCi1WDMvONfvEValN4=
+			OASVDpz1Xs+09AZ7/LWYIjrJ20u72SH5vkGUstudDe0=
 			</data>
 		</dict>
 		<key>Headers/SGSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NVoNYvAWxlZ9YFapMwVDKQE6F/A=
+			EMwvEEKOA8WXPufqSj9dqxqiiJ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2UN5qV08buevAjKibLBpCN/UptL8iF8i7iveNHZyDbE=
+			tqAynZwLB8TMViZgjG4pWyoupDxhZVte8oLsZd2s8ro=
 			</data>
 		</dict>
 		<key>Headers/SGSDK.h</key>
@@ -72,22 +72,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			s3/+fGOHI76lCermubbl/XwQKMY=
+			5eDH6A3qMETJxUW8qQXc731X2Ig=
 			</data>
 			<key>hash2</key>
 			<data>
-			JeCn2FUcg3ICBFViXSUBGBy0zoK7SypIR1/xTcLosWY=
+			0JtcLTt71Sa27+kzDGt2otnwfOi0AALP4Ka73RgTc3M=
 			</data>
 		</dict>
 		<key>Modules/SGSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y7bV1vZFc3gfRqPEYWgWo1VXWzg=
+			E4ufQuLzi31VSJcdRKYIp5x/p4M=
 			</data>
 			<key>hash2</key>
 			<data>
-			NnXsOHlv4I4oGw/rQFGGKsH/48HtuSa5vUPU+GpOkkk=
+			2fUzNm0+U5yFo6fyXtrTj0Toj4iXNpIGerHfpdZrwHY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

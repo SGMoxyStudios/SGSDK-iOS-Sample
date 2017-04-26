@@ -8,17 +8,17 @@
   - 加入完成後可在專案裡 import SGSDK。
 
 ## 函式
-  - func SetListener(listener callBack: @escaping (SGListenResult) -> Void) -> Void
+  - func SetListener(listener callBack: @escaping (SGListenerResult) -> Void) -> Void
     - 使用 SGSDK 第一步就是，設置 listener，SGSDK 所有非同步的函式，都透過回調監聽來得到結果。
-    - listener 參數SGListenResult有三個屬性
+    - listener 參數SGListenerResult有三個屬性
       1. Code: Int 回傳 Error Code。
       2. Msg: String 回傳該 Error Code 代表的訊息。
       3. Data: Any? 沒有其他資訊的話會是 nil，有資訊的話根據不同函式回應不同結構。
 
     ```
-    SGSDK.Instance.SetListener(listener: MsgListen)
+    SGSDK.Instance.SetListener(listener: MsgListener)
     ...
-    func MsgListen(result: SGListenResult) {
+    func MsgListener(result: SGListenerResult) {
       //print("code: \(result.Code), msg: \(result.Msg)")
     }
     ```
@@ -50,6 +50,9 @@
   - func MyKid() -> Void
     - 調用新增孩童資料頁面。
 
+  - func SelectKid() -> Void
+    - 調用孩童列表頁面，家長可以標記一名正在進行遊戲的孩童。
+
   - func MyAccount() -> Void
     - 調用帳號總覽頁面，以瀏覽孩童遊戲紀錄。
     - 不會有回傳。
@@ -59,7 +62,6 @@
 
   - func VerifySession(gameKey: String, sessionId: String, openId: String, sign: String) -> Void
     - 使用 SessionID 取得登入帳號資訊。
-    - 回調監聽的 Data 參數：SGMember。
 
   - func LoginByToken(token: String) -> Void
     - 使用 Token 快速登入。
@@ -113,22 +115,36 @@
         }
     ```
 
+  - func GetKidIndex() -> Int?
+    - 前置：Login()
+    - 取得正在遊玩的孩童索引。
+    - 使用以下函式會變更索引, Login(), Signup(), SelectKid(), MyKid(), LoginByToken()
+
+  - func GetKidFace() -> String?
+    - 前置：Login()
+    - 取得正在遊玩的孩童頭像。
+    - 使用以下函式會變更懸浮按鈕頭像, Login(), Signup(), SelectKid(), MyKid(), LoginByToken()
+
   - func IsLogin() -> Bool
     - 判斷是否為登入狀態
 
   - func GetChannelID() -> String
     - 取得平台名稱
 
-  - func ShowFloatingButton(place: eFloatingButtonPlace) -> Void
+  - func ShowWidget(place: EWidgetLocation = .Left) -> Void
     - 開啟懸浮按鈕
     - 前置：Init()
     - 開啟後會依照選擇的方位在視窗邊上出現
     - 按鈕可隨意拖拉，放開按鈕後會找最接近的邊吸附
     - 按鈕不動的時候10秒後會自動埋入半顆按鈕再視窗邊上
-    - 按下按鈕會開啟孩童資料的畫面
+    - 顯示懸浮按鈕，圖像為正在遊玩的孩童頭像，登入後自動顯示。
+    - 點擊懸浮按鈕，會執行帳號資訊。
 
-  - func HideFloatingButton() -> Void
+  - func HideWidget() -> Void
     - 關閉懸浮按鈕
+
+  - func IsWidgetVisible() -> Bool
+    - 檢查懸浮按鈕狀態。
 
   - func Destroy() -> Void
     - 釋放 SGSDK 資源。

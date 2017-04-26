@@ -26,10 +26,13 @@ class MenuViewController: UIViewController {
                          "Get Open ID",
                          "Get Session ID",
                          "Get Token",
+                         "Get Kid Index",
+                         "Get Kid Face",
                          "Forgot password",
                          "Change password",
                          "Parental lock",
                          "My kid",
+                         "Select kid",
                          "My account",
                          "OpenID",
                          "Verify session",
@@ -41,7 +44,7 @@ class MenuViewController: UIViewController {
                          "Game start",
                          "Game stop",
                          "------浮動按鈕------",
-                         "Show floating button",
+                         "Hide floating button",
                          "Left top",
                          "Top",
                          "Right top",
@@ -50,6 +53,7 @@ class MenuViewController: UIViewController {
                          "Left bottom",
                          "Bottom",
                          "Right bottom",
+                         "Is floating button visible",
                          "------In-App Purchase------",
                          "IAP init",
                          "Consumable item",
@@ -67,10 +71,13 @@ class MenuViewController: UIViewController {
         case GetOpenId = "Get Open ID"
         case GetSessionId = "Get Session ID"
         case GetToken = "Get Token"
+        case GetKidIndex = "Get Kid Index"
+        case GetKidFace = "Get Kid Face"
         case ForgotPassword = "Forgot password"
         case ChangePassword = "Change password"
         case ParentalLock = "Parental lock"
         case MyKid = "My kid"
+        case SelectKid = "Select kid"
         case MyAccount = "My account"
         case OpenId = "OpenID"
         case VerifySession = "Verify session"
@@ -80,7 +87,7 @@ class MenuViewController: UIViewController {
         case Destroy = "Destroy"
         case GameStart = "Game start"
         case GameStop = "Game stop"
-        case ShowFloatingButton = "Show floating button"
+        case HideFloatingButton = "Hide floating button"
         case LeftTop = "Left top"
         case Top = "Top"
         case RightTop = "Right top"
@@ -89,6 +96,7 @@ class MenuViewController: UIViewController {
         case LeftBottom = "Left bottom"
         case Bottom = "Bottom"
         case RightBottom = "Right bottom"
+        case IsFloatingButtonVisible = "Is floating button visible"
         case IAPInit = "IAP init"
         case Consumable = "Consumable item"
         case NonConsumable = "Non consumable item"
@@ -159,6 +167,10 @@ extension MenuViewController {
             onGetSessionID()
         case .GetToken:
             onGetToken()
+        case .GetKidIndex:
+            onGetKidIndex()
+        case .GetKidFace:
+            onGetKidFace()
         case .ForgotPassword:
             onForgotPassword()
         case .ChangePassword:
@@ -167,6 +179,8 @@ extension MenuViewController {
             onParentalLock()
         case .MyKid:
             onMyKid()
+        case .SelectKid:
+            onSelectKid()
         case .MyAccount:
             onMyAccount()
         case .OpenId:
@@ -185,7 +199,7 @@ extension MenuViewController {
             onGameStart()
         case .GameStop:
             onGameStop()
-        case .ShowFloatingButton:
+        case .HideFloatingButton:
             onShowFloatingButton()
         case .LeftTop:
             onLeftTop()
@@ -203,6 +217,8 @@ extension MenuViewController {
             onBottom()
         case .RightBottom:
             onRightBottom()
+        case .IsFloatingButtonVisible:
+            onIsFloatingButtonVisible()
         case .IAPInit:
             onIAPInit()
         case .Consumable:
@@ -223,7 +239,7 @@ extension MenuViewController {
     }
     
     func onInit() {
-        SGSDK.Instance.SetListener(listener: MsgListen)
+        SGSDK.Instance.SetListener(listener: MsgListener)
         SGSDK.Instance.Init(GameKey: GameKey, AppSecret: AppSecret)
     }
     
@@ -260,6 +276,22 @@ extension MenuViewController {
         }
     }
     
+    func onGetKidIndex() {
+        if let msg = SGSDK.Instance.GetKidIndex() {
+            setMessage("\(msg)")
+        } else {
+            setMessage("Please login.")
+        }
+    }
+    
+    func onGetKidFace() {
+        if let msg = SGSDK.Instance.GetKidFace() {
+            setMessage(msg)
+        } else {
+            setMessage("Please login.")
+        }
+    }
+    
     func onSignup() {
         SGSDK.Instance.Signup()
     }
@@ -278,6 +310,10 @@ extension MenuViewController {
     
     func onMyKid() {
         SGSDK.Instance.MyKid()
+    }
+    
+    func onSelectKid() {
+        SGSDK.Instance.SelectKid()
     }
     
     func onMyAccount() {
@@ -329,39 +365,43 @@ extension MenuViewController {
     }
     
     func onShowFloatingButton() {
-        SGSDK.Instance.HideFloatingButton()
+        SGSDK.Instance.HideWidget()
     }
     
     func onLeftTop() {
-        SGSDK.Instance.ShowFloatingButton(place: .LeftTop)
+        SGSDK.Instance.ShowWidget(place: .TopLeft)
     }
     
     func onTop() {
-        SGSDK.Instance.ShowFloatingButton(place: .Top)
+        SGSDK.Instance.ShowWidget(place: .Top)
     }
     
     func onRightTop() {
-        SGSDK.Instance.ShowFloatingButton(place: .RightTop)
+        SGSDK.Instance.ShowWidget(place: .TopRight)
     }
     
     func onLeft() {
-        SGSDK.Instance.ShowFloatingButton(place: .Left)
+        SGSDK.Instance.ShowWidget(place: .Left)
     }
     
     func onRight() {
-        SGSDK.Instance.ShowFloatingButton(place: .Right)
+        SGSDK.Instance.ShowWidget(place: .Right)
     }
     
     func onLeftBottom() {
-        SGSDK.Instance.ShowFloatingButton(place: .LeftBottom)
+        SGSDK.Instance.ShowWidget(place: .BottomLeft)
     }
     
     func onBottom() {
-        SGSDK.Instance.ShowFloatingButton(place: .Bottom)
+        SGSDK.Instance.ShowWidget(place: .Bottom)
     }
     
     func onRightBottom() {
-        SGSDK.Instance.ShowFloatingButton(place: .RightBottom)
+        SGSDK.Instance.ShowWidget(place: .BottomRight)
+    }
+    
+    func onIsFloatingButtonVisible() {
+        self.setMessage("Is floating button visible? \(SGSDK.Instance.IsWidgetVisible())")
     }
     
     func onDestroy() {
@@ -427,11 +467,10 @@ extension MenuViewController {
         return req
     }
     
-    func MsgListen(result: SGListenResult) {
+    func MsgListener(result: SGListenerResult) {
         var message = "Code: \(result.Code), Message: \(result.Msg)"
-        
         switch result.Code {
-        case 201, 301, 901, 1001: //Login, Signup, Verify session, Login by token
+        case 201, 301, 1001, 801, 1501: // Login, Signup, Login by token
             if let data = result.Data {
                 let member = data as! SGMamber
                 message.append("\nAccount: \(member.Account!)\nOpenID: \(member.OpenId!)\nToken: \(member.Token!)\nCreateTime: \(member.CreatTime!)\nLoginTime: \(member.LoginTime!)\nLanguage: \(member.Language!)\nChannel: \(member.Channel!)\nPhone: \(member.Phone!)\nEmail: \(member.EMail!)\nSessionID: \(member.SessionId!)\n")
@@ -452,19 +491,19 @@ extension MenuViewController {
                 let transaction = data as! SKPaymentTransaction
                 message.append(", product ID:\(transaction.payment.productIdentifier), Date:\(String(describing: transaction.transactionDate))")
             }
-        case 1141: //Restore
+        case 1141:  // Restore
             if let data = result.Data {
                 let productIds = data as! [String]
                 for productId in productIds {
                     message.append(", restore product: \(productId) ")
                 }
             }
-        case 1201:  //Get Order
+        case 1201:  // Get Order
             if let data = result.Data {
                 let payresponse = data as! SGPayResponse
                 message.append(", sign: \(payresponse.Sign) ")
             }
-        case 8004:
+        case 8004:  // Open ID
             if let data = result.Data {
                 let openid = data as! String
                 message.append(", open id: \(openid)")

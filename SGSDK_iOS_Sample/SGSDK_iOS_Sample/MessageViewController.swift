@@ -16,7 +16,7 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
 
         Message.text.removeAll()
-        Message.text = "SG SDK Demo.\n"
+        SetMessage("SG SDK Demo.")
     }
 
     override func didReceiveMemoryWarning() {
