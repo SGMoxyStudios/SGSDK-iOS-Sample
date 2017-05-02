@@ -444,6 +444,8 @@ extension MenuViewController {
             return
         }
         
+        tempPayresponse.Sign = "c8763"
+        
         SGSDK.Instance.GetOrder(orderId: tempPayresponse.OrderId, gameKey: GameKey, openId: openid, sign: tempPayresponse.Sign)
     }
     
@@ -473,18 +475,12 @@ extension MenuViewController {
         case 201, 301, 1001, 801, 1501: // Login, Signup, Login by token
             if let data = result.Data {
                 let member = data as! SGMamber
-                message.append("\nAccount: \(member.Account!)\nOpenID: \(member.OpenId!)\nToken: \(member.Token!)\nCreateTime: \(member.CreatTime!)\nLoginTime: \(member.LoginTime!)\nLanguage: \(member.Language!)\nChannel: \(member.Channel!)\nPhone: \(member.Phone!)\nEmail: \(member.EMail!)\nSessionID: \(member.SessionId!)\n")
-                if let children = member.Children {
-                    for child in children {
-                        message.append("Name: \(child.Name!), Sex: \(child.Sex!), Face: \(child.Face!), Birthday: \(child.Birthday!)\n")
-                    }
-                }
-                
+                result.SetDataDic(dataDic: member.ToDictionary())
             }
         case 1101:  // SG server validating receipt ok
             if let data = result.Data {
                 tempPayresponse = data as! SGPayResponse
-                message.append(", receipt: \(tempPayresponse.Receipt) ")
+                result.SetDataDic(dataDic: tempPayresponse.ToDictionary())
             }
         case 1136:  // appstore transaction ok
             if let data = result.Data {
@@ -494,24 +490,27 @@ extension MenuViewController {
         case 1141:  // Restore
             if let data = result.Data {
                 let productIds = data as! [String]
-                for productId in productIds {
-                    message.append(", restore product: \(productId) ")
-                }
+                let dic: [String: Any] = ["ProductIds": productIds]
+                result.SetDataDic(dataDic: dic)
             }
         case 1201:  // Get Order
             if let data = result.Data {
                 let payresponse = data as! SGPayResponse
-                message.append(", sign: \(payresponse.Sign) ")
+                result.SetDataDic(dataDic: payresponse.ToDictionary())
             }
         case 8004:  // Open ID
             if let data = result.Data {
                 let openid = data as! String
-                message.append(", open id: \(openid)")
+                let dic:[String: Any] = ["OpenID": openid]
+                result.SetDataDic(dataDic: dic)
             }
         default:
             break
         }
         
+        if let jsonstr = result.ToJsonString() {
+            message = jsonstr
+        }
         self.setMessage(message)
     }
     

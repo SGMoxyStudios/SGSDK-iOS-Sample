@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		qQiiZoCAd/t7uFdiKE9N43D9a28=
+		CPK3xLTR6G4PNshFWfhcV0gL2/c=
 		</data>
 		<key>Headers/SGSDK-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jFd4/PtIRYbBpz+CkvG2HLLEfbY=
+		O2i3n79zFyvHM0KoOmamTo/ZpVU=
 		</data>
 		<key>Modules/SGSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/SGSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		E4ufQuLzi31VSJcdRKYIp5x/p4M=
+		l/p1cxkTU0/PciCVh/EHSHMtjAk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qQiiZoCAd/t7uFdiKE9N43D9a28=
+			CPK3xLTR6G4PNshFWfhcV0gL2/c=
 			</data>
 			<key>hash2</key>
 			<data>
-			OASVDpz1Xs+09AZ7/LWYIjrJ20u72SH5vkGUstudDe0=
+			0ufa3om+vCSxxUnV5QeDSsHTEkkbnwhxcbqnL7P7KF0=
 			</data>
 		</dict>
 		<key>Headers/SGSDK-Swift.h</key>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E4ufQuLzi31VSJcdRKYIp5x/p4M=
+			l/p1cxkTU0/PciCVh/EHSHMtjAk=
 			</data>
 			<key>hash2</key>
 			<data>
-			2fUzNm0+U5yFo6fyXtrTj0Toj4iXNpIGerHfpdZrwHY=
+			DLEpMM1LlOpE4Ss1ZUqjKsDn5Cr2CW6APmOAdcbvbP4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

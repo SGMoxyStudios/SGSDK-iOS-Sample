@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33343011EB873FD0068193C /* SGSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33343001EB873FD0068193C /* SGSDK.framework */; };
+		D33343021EB873FD0068193C /* SGSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D33343001EB873FD0068193C /* SGSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3535EE91E84C80600BBFEE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3535EE81E84C80600BBFEE4 /* AppDelegate.swift */; };
 		D3535EEB1E84C80600BBFEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3535EEA1E84C80600BBFEE4 /* ViewController.swift */; };
 		D3535EEE1E84C80600BBFEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3535EEC1E84C80600BBFEE4 /* Main.storyboard */; };
@@ -16,18 +18,16 @@
 		D366042F1E9763810027445F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366042E1E9763810027445F /* MessageViewController.swift */; };
 		D36604311E9763930027445F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36604301E9763930027445F /* MenuViewController.swift */; };
 		D39F2B3E1E95C6C200E006E4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DFE6061E8B514200555648 /* StoreKit.framework */; };
-		D3D0A2651EB08237000E940A /* SGSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D0A2641EB08237000E940A /* SGSDK.framework */; };
-		D3D0A2661EB08237000E940A /* SGSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3D0A2641EB08237000E940A /* SGSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D3D0A2671EB08237000E940A /* Embed Frameworks */ = {
+		D33343031EB873FD0068193C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3D0A2661EB08237000E940A /* SGSDK.framework in Embed Frameworks */,
+				D33343021EB873FD0068193C /* SGSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D33343001EB873FD0068193C /* SGSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSDK.framework; sourceTree = "<group>"; };
 		D3535EE51E84C80600BBFEE4 /* SGSDK_iOS_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGSDK_iOS_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3535EE81E84C80600BBFEE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3535EEA1E84C80600BBFEE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		D366042C1E9760230027445F /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		D366042E1E9763810027445F /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D36604301E9763930027445F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D3D0A2641EB08237000E940A /* SGSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSDK.framework; sourceTree = "<group>"; };
 		D3DFE6061E8B514200555648 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39F2B3E1E95C6C200E006E4 /* StoreKit.framework in Frameworks */,
-				D3D0A2651EB08237000E940A /* SGSDK.framework in Frameworks */,
+				D33343011EB873FD0068193C /* SGSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		D3535EDC1E84C80600BBFEE4 = {
 			isa = PBXGroup;
 			children = (
-				D3D0A2641EB08237000E940A /* SGSDK.framework */,
+				D33343001EB873FD0068193C /* SGSDK.framework */,
 				D3535EE71E84C80600BBFEE4 /* SGSDK_iOS_Sample */,
 				D3535EE61E84C80600BBFEE4 /* Products */,
 				D3DFE6051E8B514200555648 /* Frameworks */,
@@ -114,7 +114,7 @@
 				D3535EE11E84C80600BBFEE4 /* Sources */,
 				D3535EE21E84C80600BBFEE4 /* Frameworks */,
 				D3535EE31E84C80600BBFEE4 /* Resources */,
-				D3D0A2671EB08237000E940A /* Embed Frameworks */,
+				D33343031EB873FD0068193C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
