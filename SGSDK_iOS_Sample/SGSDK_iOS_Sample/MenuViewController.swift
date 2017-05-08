@@ -18,42 +18,33 @@ class MenuViewController: UIViewController {
     var productIDs = [String]()
     var tempPayresponse: SGPayResponse!
     
-    let functionNames = ["------SgSDK------",
+    let functionNames = ["------SGSDK------",
                          "Init",
-                         "Signup",
+                         "------WebView------",
                          "Login",
+                         "Signup",
+                         "Forgot password",
+                         "Change password",
+                         "My account",
+                         "My kid",
+                         "Select kid",
+                         "Parental lock",
+                         "------API------",
+                         "Login by token",
+                         "Verify session",
+                         "OpenID",
+                         "Game start",
+                         "Game stop",
                          "Logout",
+                         "------Function------",
                          "Get Open ID",
                          "Get Session ID",
                          "Get Token",
                          "Get Kid Index",
                          "Get Kid Face",
-                         "Forgot password",
-                         "Change password",
-                         "Parental lock",
-                         "My kid",
-                         "Select kid",
-                         "My account",
-                         "OpenID",
-                         "Verify session",
-                         "Login by token",
                          "Is login",
                          "Channel ID",
                          "Destroy",
-                         "------統計------",
-                         "Game start",
-                         "Game stop",
-                         "------浮動按鈕------",
-                         "Hide floating button",
-                         "Left top",
-                         "Top",
-                         "Right top",
-                         "Left",
-                         "Right",
-                         "Left bottom",
-                         "Bottom",
-                         "Right bottom",
-                         "Is floating button visible",
                          "------In-App Purchase------",
                          "IAP init",
                          "Consumable item",
@@ -61,7 +52,18 @@ class MenuViewController: UIViewController {
                          "Auto renew subscription",
                          "Non auto subscription",
                          "Get order",
-                         "Restore"]
+                         "Restore",
+                         "------Widget------",
+                         "Hide widget",
+                         "Top left",
+                         "Top",
+                         "Top right",
+                         "Left",
+                         "Right",
+                         "Bottom left",
+                         "Bottom",
+                         "Bottom right",
+                         "Is widget visible"]
     
     enum eFunction: String {
         case Init = "Init"
@@ -87,16 +89,16 @@ class MenuViewController: UIViewController {
         case Destroy = "Destroy"
         case GameStart = "Game start"
         case GameStop = "Game stop"
-        case HideFloatingButton = "Hide floating button"
-        case LeftTop = "Left top"
+        case HideWidget = "Hide widget"
+        case TopLeft = "Top left"
         case Top = "Top"
-        case RightTop = "Right top"
+        case TopRight = "Top right"
         case Left = "Left"
         case Right = "Right"
-        case LeftBottom = "Left bottom"
+        case BottomLeft = "Bottom left"
         case Bottom = "Bottom"
-        case RightBottom = "Right bottom"
-        case IsFloatingButtonVisible = "Is floating button visible"
+        case BottomRight = "Bottom right"
+        case IsWidgetVisible = "Is widget visible"
         case IAPInit = "IAP init"
         case Consumable = "Consumable item"
         case NonConsumable = "Non consumable item"
@@ -199,26 +201,26 @@ extension MenuViewController {
             onGameStart()
         case .GameStop:
             onGameStop()
-        case .HideFloatingButton:
-            onShowFloatingButton()
-        case .LeftTop:
-            onLeftTop()
+        case .HideWidget:
+            onHideWidget()
+        case .TopLeft:
+            onTopLeft()
         case .Top:
             onTop()
-        case .RightTop:
-            onRightTop()
+        case .TopRight:
+            onTopRight()
         case .Left:
             onLeft()
         case .Right:
             onRight()
-        case .LeftBottom:
-            onLeftBottom()
+        case .BottomLeft:
+            onBottomLeft()
         case .Bottom:
             onBottom()
-        case .RightBottom:
-            onRightBottom()
-        case .IsFloatingButtonVisible:
-            onIsFloatingButtonVisible()
+        case .BottomRight:
+            onBottomRight()
+        case .IsWidgetVisible:
+            onIsWidgetVisible()
         case .IAPInit:
             onIAPInit()
         case .Consumable:
@@ -244,6 +246,7 @@ extension MenuViewController {
     }
     
     func onLogin() {
+        SGSDK.Instance.SetDefaultWidgetLocation(place: .Left)
         SGSDK.Instance.Login()
     }
     
@@ -364,11 +367,11 @@ extension MenuViewController {
         self.setMessage("Channel ID: \(SGSDK.Instance.GetChannelID())")
     }
     
-    func onShowFloatingButton() {
+    func onHideWidget() {
         SGSDK.Instance.HideWidget()
     }
     
-    func onLeftTop() {
+    func onTopLeft() {
         SGSDK.Instance.ShowWidget(place: .TopLeft)
     }
     
@@ -376,7 +379,7 @@ extension MenuViewController {
         SGSDK.Instance.ShowWidget(place: .Top)
     }
     
-    func onRightTop() {
+    func onTopRight() {
         SGSDK.Instance.ShowWidget(place: .TopRight)
     }
     
@@ -388,7 +391,7 @@ extension MenuViewController {
         SGSDK.Instance.ShowWidget(place: .Right)
     }
     
-    func onLeftBottom() {
+    func onBottomLeft() {
         SGSDK.Instance.ShowWidget(place: .BottomLeft)
     }
     
@@ -396,11 +399,11 @@ extension MenuViewController {
         SGSDK.Instance.ShowWidget(place: .Bottom)
     }
     
-    func onRightBottom() {
+    func onBottomRight() {
         SGSDK.Instance.ShowWidget(place: .BottomRight)
     }
     
-    func onIsFloatingButtonVisible() {
+    func onIsWidgetVisible() {
         self.setMessage("Is floating button visible? \(SGSDK.Instance.IsWidgetVisible())")
     }
     
