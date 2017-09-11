@@ -138,6 +138,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 #endif
 
+#import <SGSDK/SGSDK.h>
+
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 
@@ -179,6 +181,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SGSDK * _Non
 - (void)IAPInitWithProductIDs:(NSArray<NSString *> * _Nonnull)productIDs;
 - (void)GetOrderWithOrderId:(NSString * _Nonnull)orderId gameKey:(NSString * _Nonnull)gameKey openId:(NSString * _Nonnull)openId sign:(NSString * _Nonnull)sign;
 - (void)RestorePurchase;
+- (void)ChangeLanguageWithLang:(NSString * _Nonnull)lang;
 @end
 
 @class WKWebView;
@@ -186,6 +189,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SGSDK * _Non
 
 @interface SGSDK (SWIFT_EXTENSION(SGSDK)) <WKNavigationDelegate>
 - (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)didFinish;
+@end
+
+@class UIApplication;
+@class BaseReq;
+@class BaseResp;
+
+@interface SGSDK (SWIFT_EXTENSION(SGSDK)) <UIApplicationDelegate, WXApiDelegate>
+- (BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)application:(UIApplication * _Nonnull)application handleOpenURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
+- (void)onReq:(BaseReq * _Null_unspecified)req;
+- (void)onResp:(BaseResp * _Null_unspecified)resp;
 @end
 
 

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WXApi.h"
+#import "WXApiObject.h"
+#import "WechatAuthSDK.h"
 
 //! Project version number for SGSDK.
 FOUNDATION_EXPORT double SGSDKVersionNumber;
